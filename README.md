@@ -173,7 +173,7 @@ If Qiskit is not installed, install the optional integration packages in a separ
 - `aegis_os.py`: terminal runner managing deterministic execution, report output, and reviewer-mode telemetry switches.
 - `aegis_monitor.py`: loopback HTTP server orchestrating the live diagnostic dashboard, stressor controls, exports, and health endpoints.
 - `README.md`: technical specification handbook and deployment guide.
-- `LICENSE`: MIT License.
+- `LICENSE`: Apache License 2.0.
 
 ## Automated Testing
 

@@ -8,6 +8,12 @@ The project is written for infrastructure engineers, site reliability engineers,
 
 The simulation does not claim to modify physical qubits or bypass physics. It demonstrates a software control-plane model for unsafe-output prevention, trust scoring, fail-closed governance, telemetry fusion, and auditability around probabilistic or high-entropy systems.
 
+## Discoverability Keywords
+
+Suggested GitHub topics:
+
+`quantum-computing`, `site-reliability-engineering`, `sre`, `distributed-systems`, `observability`, `telemetry`, `fault-tolerance`, `byzantine-fault-tolerance`, `monte-carlo-simulation`, `control-plane`, `simulation-framework`, `reliability-engineering`, `error-mitigation`, `cryptographic-ledger`, `merkle-tree`, `zero-trust`, `python`, `standard-library`, `infrastructure`, `hardware-observability`
+
 ## Technical Metrics
 
 The current simulation and monitor track these benchmark classes:
@@ -159,4 +165,3 @@ Each live cycle result includes:
 ## License
 
 This repository is distributed under the license terms in `LICENSE`.
-

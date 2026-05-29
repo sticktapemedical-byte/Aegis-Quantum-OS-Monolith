@@ -1,0 +1,26 @@
+{
+  "artifact_sha256": "33462581e25e9e8cd986584bb40cbcd195c8916388d78d3d981bf0c74443a1f1",
+  "backend": "ibm_marrakesh",
+  "counts": {
+    "0000": 121,
+    "0010": 1,
+    "1000": 2,
+    "1110": 3,
+    "1111": 1
+  },
+  "created_utc": "2026-05-29T06:31:10.332383+00:00",
+  "ghz_population": 0.953125,
+  "ghz_population_wilson_95": {
+    "high": 0.9783421558280763,
+    "low": 0.9015024775490568
+  },
+  "job_id": "d8cf7n47avuc73dqtus0",
+  "merkle_root": "d83df2ef636d7619a9f4c329d73cabda20a03ae3515905a41ce3cffe2b2e6288",
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "850bde81f8bd00012ee713580000bbe8fcc3789fc8ea",
+  "raw_error_rate": 0.046875,
+  "round_trip_seconds": 6.119607199998427,
+  "shots": 128,
+  "source": "ibm_real_hardware",
+  "source_file": "ibm_marrakesh_128_delay.json"
+}

@@ -1,0 +1,48 @@
+{
+  "artifact_sha256": "9a405a3fb637760e16f7f05203d5bdd39115a958b51526abed82f3b3c571d4e6",
+  "backend": "fake_osaka",
+  "created_utc": "2026-05-29T06:31:10.332383+00:00",
+  "job_id": null,
+  "merkle_root": "868954883da8f07c1e1de2f9da8ec616330aba4b0209b5ce8bee44da0b1219f3",
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "953ba3daf67100012d701abc0000805acc4913da09e5",
+  "records_summary": [
+    {
+      "batch": 1,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.9140625,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9596563349339843,
+      "theta": null
+    },
+    {
+      "batch": 2,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.9609375,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9621151334262621,
+      "theta": null
+    },
+    {
+      "batch": 3,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.984375,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9626802420020382,
+      "theta": null
+    }
+  ],
+  "round_trip_seconds": 3.8509372000007716,
+  "shots": 384,
+  "source": "ibm_fake_session_batch_loop",
+  "source_file": "ibm_session_batch_loop_fake_smoke.json"
+}

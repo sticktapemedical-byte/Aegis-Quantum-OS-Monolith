@@ -85,6 +85,7 @@ Most individual runs use 128 to 512 shots, with one 1024-shot GHZ run, one 4096-
 7. The compact `.QOM` payload is implemented in `AegisContinuityKernel.emit_compact_qom_payload(...)` using `struct.pack(">IHHHHHQ", ...)`, producing exactly 22 bytes / 176 bits. `tests/test_kernel.py::test_qom_compact_payload_is_exact_176_bit_struct` unpacks the emitted bytes and validates the field boundaries.
 8. The readout mitigation comparison uses local per-qubit assignment matrices estimated from calibration circuits. It is a basic classical mitigation baseline, separate from AEGIS governance.
 9. The VQE-style scan uses a small two-qubit ansatz and toy H2 Hamiltonian expectation model to validate optimization-style circuit ingestion.
+10. `docs/validation/baseline_comparison.json` summarizes raw GHZ, AEGIS-governed GHZ, basic readout mitigation uplift, and setpoint pass-rate metrics generated from the sanitized artifact vault.
 
 ## Local Artifacts
 

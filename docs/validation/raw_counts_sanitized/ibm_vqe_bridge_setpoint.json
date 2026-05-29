@@ -1,0 +1,50 @@
+{
+  "artifact_sha256": "e52e504b776e5e7cdfd79de8cf4083bff04b56728872b71fe3f7451fb5095041",
+  "backend": "ibm_marrakesh",
+  "best_energy": -1.0149809637084155,
+  "best_theta": 0.2,
+  "created_utc": "2026-05-29T06:31:10.332383+00:00",
+  "job_id": "d8cfn0qjki0s73ar7990",
+  "merkle_root": "17ae7c6abc5aa96a361477e63980b5dcd0cff0f48cadeef05683be9845d8bad1",
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "9304a15ef5ec00012d4f1b64000039ccab20ff9740d8",
+  "records_summary": [
+    {
+      "batch": null,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": null,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9685989666142744,
+      "theta": 0.2
+    },
+    {
+      "batch": null,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": null,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9633916313106783,
+      "theta": 0.8
+    },
+    {
+      "batch": null,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": null,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.960652909536736,
+      "theta": 1.4
+    }
+  ],
+  "round_trip_seconds": 25.28972679999788,
+  "shots": 3072,
+  "source": "ibm_real_hardware_small_variational_vqe_style",
+  "source_file": "ibm_vqe_bridge_setpoint.json"
+}

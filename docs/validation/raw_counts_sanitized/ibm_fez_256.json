@@ -1,0 +1,31 @@
+{
+  "artifact_sha256": "58b11b8bac3729453aec061fb25e7f4e9fe0a4f9aef06922087ae69fedcc613c",
+  "backend": "ibm_fez",
+  "counts": {
+    "0000": 109,
+    "0001": 10,
+    "0010": 1,
+    "0011": 1,
+    "0111": 8,
+    "1000": 12,
+    "1100": 1,
+    "1101": 3,
+    "1110": 6,
+    "1111": 105
+  },
+  "created_utc": "2026-05-29T06:31:10.332383+00:00",
+  "ghz_population": 0.8359375,
+  "ghz_population_wilson_95": {
+    "high": 0.8762723987504079,
+    "low": 0.7856696977134597
+  },
+  "job_id": "d8cf8n38ch0s738uq6vg",
+  "merkle_root": "58b393050b9ba609903d291da3c8666d2b61637e1f531f53347884acf395bacb",
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "94fac5aff40500012bdd22ad00003295eb39cd45feec",
+  "raw_error_rate": 0.1640625,
+  "round_trip_seconds": 7.278829999999289,
+  "shots": 256,
+  "source": "ibm_real_hardware",
+  "source_file": "ibm_fez_256.json"
+}

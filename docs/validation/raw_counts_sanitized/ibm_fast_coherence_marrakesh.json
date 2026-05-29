@@ -1,0 +1,17 @@
+{
+  "artifact_sha256": "b948df66deff3d39ebdaedecb9d49e21f3e4485a8ca93f06f1144c88e34604a3",
+  "backend": "ibm_marrakesh",
+  "counts": {
+    "0": 136,
+    "1": 120
+  },
+  "created_utc": "2026-05-29T06:31:10.332383+00:00",
+  "job_id": "d8cfb5j8ch0s738uqcd0",
+  "merkle_root": "b7cf2dc1dd7425c6ca9460dbef6142b71d770dd78b19695c1f9dc8fcd48f2e23",
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "9475bbf8f83e00012f2f11ec0000df37c15f48786d2a",
+  "round_trip_seconds": 21.14208900000085,
+  "shots": 256,
+  "source": "ibm_real_hardware_fast_single_qubit",
+  "source_file": "ibm_fast_coherence_marrakesh.json"
+}

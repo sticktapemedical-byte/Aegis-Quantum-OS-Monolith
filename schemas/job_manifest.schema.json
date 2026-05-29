@@ -1,0 +1,16 @@
+{
+  "schema": "aegis.job_manifest.v1",
+  "required": [
+    "manifest_type",
+    "created_utc",
+    "aegis_commit_hash",
+    "python_version",
+    "artifact_count",
+    "artifacts"
+  ],
+  "artifact_required": [
+    "artifact",
+    "source_file",
+    "artifact_sha256"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "aegis_governed_ghz_mean": 0.9283447265625,
+  "aegis_governed_ghz_runs": 6,
+  "claim_boundary": "Classical comparison over returned counts; not a claim of physical noise suppression.",
+  "mitigation_mean_delta": 0.014523420952315402,
+  "mitigation_mean_mitigated": 0.9686249834523154,
+  "mitigation_mean_raw": 0.9541015625,
+  "mitigation_runs": 1,
+  "raw_ghz_mean": 0.9283447265625,
+  "raw_ghz_runs": 6,
+  "raw_ghz_std": 0.046848989263683014,
+  "setpoint_pass_rate": 1.0,
+  "setpoint_pass_wilson_95": {
+    "high": 1.0,
+    "low": 0.7961166989641515
+  },
+  "setpoint_passes": 15,
+  "setpoint_total": 15
+}

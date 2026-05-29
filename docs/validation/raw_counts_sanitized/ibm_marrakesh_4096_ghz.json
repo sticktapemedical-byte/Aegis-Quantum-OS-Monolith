@@ -1,0 +1,35 @@
+{
+  "artifact_sha256": "71ef5f5cf7a1627658c8503a44e9f543ceff7af80fd13a07c09adccac2454e1a",
+  "backend": "ibm_marrakesh",
+  "counts": {
+    "0000": 2007,
+    "0001": 23,
+    "0010": 13,
+    "0011": 13,
+    "0100": 2,
+    "0101": 2,
+    "0111": 50,
+    "1000": 13,
+    "1001": 4,
+    "1011": 19,
+    "1100": 7,
+    "1101": 21,
+    "1110": 30,
+    "1111": 1892
+  },
+  "created_utc": "2026-05-29T06:31:10.332383+00:00",
+  "ghz_population": 0.951904296875,
+  "ghz_population_wilson_95": {
+    "high": 0.9580441388809422,
+    "low": 0.9449176066361316
+  },
+  "job_id": "d8cfjoijki0s73ar75bg",
+  "merkle_root": "a2251c409337c5f91ddb9f9eab6153243e598a376d1455a24f45758460505972",
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "95131c50f51d00012c911f2000007cc5253daca273bf",
+  "raw_error_rate": 0.048095703125,
+  "round_trip_seconds": 39.64144750000196,
+  "shots": 4096,
+  "source": "ibm_real_hardware",
+  "source_file": "ibm_marrakesh_4096_ghz.json"
+}

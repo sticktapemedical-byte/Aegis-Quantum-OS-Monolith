@@ -1,0 +1,13 @@
+{
+  "schema": "aegis.qom_record.v1",
+  "required": [
+    "qom_compact_payload_bits",
+    "qom_compact_payload_hex",
+    "merkle_root"
+  ],
+  "properties": {
+    "qom_compact_payload_bits": "integer",
+    "qom_compact_payload_hex": "hex-string",
+    "merkle_root": "sha256-hex"
+  }
+}

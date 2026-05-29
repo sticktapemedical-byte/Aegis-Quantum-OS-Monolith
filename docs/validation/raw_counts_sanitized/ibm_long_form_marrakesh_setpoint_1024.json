@@ -1,0 +1,20 @@
+{
+  "artifact_sha256": "79dbde965575eec453f77017286ed20e4278ccf2fc825f08c2c5bbe4d24e0d9e",
+  "backend": "ibm_marrakesh",
+  "created_utc": "2026-05-29T06:31:10.332383+00:00",
+  "job_id": "d8cfk538amns73bjg5gg",
+  "mean_setpoint_abs_error": 0.004296874999999973,
+  "merkle_root": "b4b7e446bbed70a2c0042d30c9930d753c8b1b5b1c7ac10dc0c244ae9a8e50ef",
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "a898b7f1ef54000128d03210000008d42089a6f9b2a7",
+  "round_trip_seconds": 7.240122100000008,
+  "setpoint_pass_wilson_95": {
+    "high": 1.0,
+    "low": 0.5655175352168251
+  },
+  "setpoint_validations_passed": 5,
+  "setpoint_validations_total": 5,
+  "shots": 5120,
+  "source": "ibm_real_hardware_long_form_single_qubit_phase_sweep",
+  "source_file": "ibm_long_form_marrakesh_setpoint_1024.json"
+}

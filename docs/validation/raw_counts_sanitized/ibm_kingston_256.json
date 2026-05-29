@@ -1,0 +1,30 @@
+{
+  "artifact_sha256": "ea469858fa4b50b935b91dd0325b25d9ff4ca4069d7b43dd72a8ad8cc236108c",
+  "backend": "ibm_kingston",
+  "counts": {
+    "0000": 128,
+    "0001": 8,
+    "0011": 2,
+    "0101": 1,
+    "1000": 1,
+    "1011": 1,
+    "1100": 1,
+    "1101": 5,
+    "1111": 109
+  },
+  "created_utc": "2026-05-29T06:31:10.332383+00:00",
+  "ghz_population": 0.92578125,
+  "ghz_population_wilson_95": {
+    "high": 0.9519738928081888,
+    "low": 0.886999229454155
+  },
+  "job_id": "d8cf7r2jki0s73ar6gv0",
+  "merkle_root": "5cc4d0698a7dff81df454893b050d7a8462584664ca6a65c2d95e777a3862c7c",
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "9442a7f5f53500012c9e1edf0000072742891d4b1fd8",
+  "raw_error_rate": 0.07421875,
+  "round_trip_seconds": 5.9087875000004715,
+  "shots": 256,
+  "source": "ibm_real_hardware",
+  "source_file": "ibm_kingston_256.json"
+}

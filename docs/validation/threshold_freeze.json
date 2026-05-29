@@ -1,0 +1,40 @@
+{
+  "freeze_id": "aegis-v1.1-public-validation-freeze",
+  "frozen_utc": "2026-05-29T00:00:00Z",
+  "aegis_commit_hash": "0627c30",
+  "q_conf_accept_threshold": 0.90,
+  "q_conf_warn_threshold": 0.82,
+  "q_conf_fail_threshold": 0.70,
+  "selector_weights": {
+    "target_fidelity": 0.45,
+    "q_conf": 0.25,
+    "variance": -0.15,
+    "cost": -0.10,
+    "risk": -0.05
+  },
+  "fallback_epsilon": 0.01,
+  "s_safe_lambda": 1.0,
+  "accepted_governance_states": [
+    "NORMAL"
+  ],
+  "warn_governance_states": [
+    "STORM_PROTECT",
+    "PHASE_HOLD",
+    "SOFT_ABORT"
+  ],
+  "fail_governance_states": [
+    "ANCHOR_DISPUTE",
+    "CRYPTO_SEAL",
+    "CIRCUIT_ABORT",
+    "SECURITY_LOCKDOWN",
+    "HARD_ABORT"
+  ],
+  "resource_cost_weights": {
+    "shots": 1.0,
+    "pulse_count": 0.20,
+    "circuit_depth": 0.30,
+    "rerun_probability": 0.50,
+    "mitigation_overhead": 0.35
+  },
+  "notes": "Public validation freeze for claim-safe IBM QPU output-governance artifacts. Do not use this file to imply real-time QPU control."
+}

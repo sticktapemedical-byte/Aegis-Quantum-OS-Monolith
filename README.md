@@ -217,10 +217,20 @@ If Qiskit is not installed, install the optional integration packages in a separ
 - `docs/ibm_quantum_setup.md`: optional IBM Quantum bridge setup and operational cautions.
 - `docs/runtime_boundaries.md`: detailed simulated failure-boundary rules.
 - `docs/sample_reviewer_output.json`: compact example of reviewer-mode output fields.
+- `docs/validation/job_manifest.json`: sanitized validation manifest with artifact hashes, versions, backends, job IDs, and shot counts.
+- `docs/validation/baseline_comparison.json`: raw-vs-governed-vs-mitigated comparison generated from sanitized artifacts.
+- `docs/validation/raw_counts_sanitized/`: sanitized IBM result artifacts. These include count histograms and derived metrics, but exclude tokens, account identifiers, and local paths.
+- `docs/validation/threshold_freeze.json`: frozen public validation thresholds used to avoid post-hoc tuning accusations.
+- `schemas/`: lightweight schema descriptors for validation artifacts, `.QOM` records, and threshold-freeze files.
+- `circuits/`: exact circuit specifications for GHZ, phase setpoint, VQE-style toy H2, and depth-stress workloads.
 - `.github/FUNDING.yml`: external support link configuration.
 - `examples/qiskit_bridge.py`: optional Qiskit Aer bridge that maps noisy GHZ circuit counts into AEGIS telemetry inputs.
 - `examples/ibm_bridge.py`: optional IBM Quantum Runtime bridge with fake-backend smoke testing and explicit real-hardware mode.
+- `examples/build_validation_artifacts.py`: builds sanitized validation artifacts from local IBM result files.
+- `examples/baseline_comparator.py`: summarizes raw GHZ, AEGIS-governed GHZ, readout mitigation uplift, and setpoint pass-rate metrics.
+- `examples/ibm_backend_discovery.py`: lists accessible IBM Quantum backends without submitting jobs.
 - `tests/test_kernel.py`: pytest-compatible regression suite for crypto sealing, holdover aborts, and wrapped-delta phase continuity.
+- `tests/test_validation_artifacts.py`: validates Wilson confidence intervals, threshold-freeze fields, sanitized manifest hashes, and `.QOM` artifact structure.
 - `requirements-dev.txt`: local test-runner dependency file.
 - `requirements-qiskit.txt`: optional Qiskit bridge dependency file.
 - `aegis_kernel.py`: core control-plane logic, mathematical registers, governance states, Monte Carlo metrics, `.QOM` frames, Merkle lineage, and multiplicative trust matrices.

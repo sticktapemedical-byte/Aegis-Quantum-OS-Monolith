@@ -1,0 +1,16 @@
+{
+  "schema": "aegis.threshold_freeze.v1",
+  "required": [
+    "freeze_id",
+    "frozen_utc",
+    "aegis_commit_hash",
+    "q_conf_accept_threshold",
+    "selector_weights",
+    "fallback_epsilon",
+    "s_safe_lambda",
+    "accepted_governance_states",
+    "warn_governance_states",
+    "fail_governance_states",
+    "resource_cost_weights"
+  ]
+}

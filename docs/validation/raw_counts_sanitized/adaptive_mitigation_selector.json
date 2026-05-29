@@ -1,7 +1,7 @@
 {
-  "artifact_sha256": "263bbaa2507f443b15c6b1a7254acc5146916ad0d29c1c4d5470a0e605d7793d",
-  "backend": null,
-  "created_utc": "2026-05-29T08:47:11.385471+00:00",
+  "artifact_sha256": "a44afb8d1060eb58cde8ae76dabb80e29dc37e1a76a183dbcb0e5a5fa9e196af",
+  "backend": "ibm_marrakesh",
+  "created_utc": "2026-05-29T14:16:12.276732+00:00",
   "decision": {
     "mitigated_quality": 0.9668303603601859,
     "mitigation_overhead": 0.005,
@@ -10,12 +10,15 @@
     "selection_reason": "uplift_exceeds_cost",
     "uplift": 0.01565848536018588
   },
-  "job_id": null,
-  "merkle_root": null,
-  "qom_compact_payload_bits": null,
-  "qom_compact_payload_hex": null,
-  "round_trip_seconds": null,
-  "shots": null,
+  "job_id": "d8cl3cj8amns73bjn5vg",
+  "merkle_root": "42772cfe6f913c4caa2c5e68bb1a341ad1661fdb22cb4789c82db15d2b59be0d",
+  "mitigated_ghz_population": 0.9668303603601859,
+  "mitigation_delta": 0.01565848536018588,
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "9657123cf5fb00012d201c4d0000f70004af1644bc5b",
+  "raw_ghz_population": 0.951171875,
+  "round_trip_seconds": 8.446949499993934,
+  "shots": 3072,
   "source": "aegis_adaptive_mitigation_selector",
   "source_file": "adaptive_mitigation_selector.json"
 }

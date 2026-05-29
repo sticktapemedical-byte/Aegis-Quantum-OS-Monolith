@@ -16,6 +16,18 @@ def bar(width: int, value: float) -> str:
     return "#" * filled + "." * (width - filled)
 
 
+def first_present(record: dict, *keys: str) -> object:
+    for key in keys:
+        value = record.get(key)
+        if value not in (None, ""):
+            return value
+    return ""
+
+
+def clean(value: object) -> object:
+    return "" if value is None else value
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate lightweight validation CSV/Markdown/SVG report artifacts.")
     parser.add_argument("--artifacts", type=Path, default=Path("docs/validation/raw_counts_sanitized"))
@@ -29,11 +41,14 @@ def main() -> None:
         record = json.loads(path.read_text(encoding="utf-8"))
         rows.append({
             "artifact": path.name,
-            "backend": record.get("backend", ""),
-            "shots": record.get("shots", record.get("total_shots", "")),
-            "ghz_population": record.get("ghz_population", record.get("raw_ghz_population", "")),
-            "q_conf": record.get("q_conf", record.get("aegis_raw_q_conf", "")),
-            "gate": record.get("continuity_gate_passed", record.get("aegis_raw_continuity_gate_passed", "")),
+            "backend": clean(record.get("backend", "")),
+            "shots": clean(record.get("shots", record.get("total_shots", ""))),
+            "quality": first_present(record, "ghz_population", "raw_ghz_population", "mitigated_ghz_population", "selected_survival"),
+            "q_conf": first_present(record, "q_conf", "aegis_raw_q_conf"),
+            "gate": first_present(record, "continuity_gate_passed", "aegis_raw_continuity_gate_passed", "status"),
+            "job_id": clean(record.get("job_id", "")),
+            "qom_bits": clean(record.get("qom_compact_payload_bits", "")),
+            "merkle_root": clean(record.get("merkle_root", "")),
         })
     csv_path = args.outdir / "metrics.csv"
     with csv_path.open("w", newline="", encoding="utf-8") as handle:
@@ -41,15 +56,17 @@ def main() -> None:
         writer.writeheader()
         writer.writerows(rows)
     md_path = args.outdir / "validation_summary.md"
-    lines = ["# AEGIS Validation Summary", "", "| Artifact | Backend | Shots | GHZ/Quality | q_conf | Gate |", "| --- | --- | ---: | ---: | ---: | --- |"]
+    lines = ["# AEGIS Validation Summary", "", "| Artifact | Backend | Job | Shots | Quality | q_conf | Gate/Status | .QOM | Merkle |", "| --- | --- | --- | ---: | ---: | ---: | --- | ---: | --- |"]
     for row in rows:
-        lines.append(f"| {row['artifact']} | {row['backend']} | {row['shots']} | {row['ghz_population']} | {row['q_conf']} | {row['gate']} |")
+        merkle = str(row["merkle_root"])[:12] + ("..." if row["merkle_root"] else "")
+        job = str(row["job_id"])[:14] + ("..." if row["job_id"] else "")
+        lines.append(f"| {row['artifact']} | {row['backend']} | {job} | {row['shots']} | {row['quality']} | {row['q_conf']} | {row['gate']} | {row['qom_bits']} | {merkle} |")
     md_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     svg_lines = ['<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520">', '<rect width="100%" height="100%" fill="white"/>']
     y = 25
     for row in rows[:18]:
         try:
-            value = float(row["ghz_population"])
+            value = float(row["quality"])
         except Exception:
             value = 0.0
         svg_lines.append(f'<text x="10" y="{y}" font-size="11">{row["artifact"][:42]}</text>')

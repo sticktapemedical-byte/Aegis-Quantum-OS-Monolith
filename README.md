@@ -50,6 +50,7 @@ For technical review, the safest name is **Aegis Continuity Kernel** or **Probab
 - [Validation Plan](docs/validation_plan.md)
 - [IBM QPU Test Plan](docs/ibm_qpu_test_plan.md)
 - [Policy Catalog](docs/policy_catalog.md)
+- [DD-Style Circuit Definitions](docs/dd_style_circuit_definitions.md)
 - [Schemas](docs/schemas.md)
 - [Efficiency Model](docs/efficiency_model.md)
 - [Publication Checklist](docs/publication_checklist.md)
@@ -69,7 +70,7 @@ The latest campaign report is here:
 Current public-safe validation vault:
 
 - Sanitized artifacts represented: `28`
-- Total tracked shots in sanitized summaries: `64,640`
+- Total tracked shots in sanitized summaries: `71,296`
 - Tests passing locally: `28`
 - `.QOM` compact payload width: `176 bits`
 
@@ -78,7 +79,7 @@ Campaign highlights:
 - Accepted/rejected quality split on `ibm_marrakesh`: accepted mean GHZ `95.25%`, all mean `94.88%`, rejected mean `93.05%`.
 - Readout mitigation repeat on `ibm_marrakesh`: mean raw GHZ `95.77%`, mean mitigated GHZ `97.50%`, uplift `+1.73 percentage points`.
 - Adaptive backend selector: selected `ibm_marrakesh` over `ibm_kingston`; committed GHZ `95.70%`.
-- DD-style idle echo harness: selected `xy4`; survival `70.12%` vs no-DD-style arm `33.59%`.
+- DD-style idle echo harness: selected `xy4`; survival `70.12%` vs no-DD-style arm `33.59%` in one workload/run; repeat testing is still required.
 - Dynamic-circuit governance: real `ibm_marrakesh` dynamic-circuit job completed.
 - Negative/inconclusive results are preserved: delay-ramp monotonic degradation was not observed, and the coherence-controller delay fit did not expose a decay curve.
 

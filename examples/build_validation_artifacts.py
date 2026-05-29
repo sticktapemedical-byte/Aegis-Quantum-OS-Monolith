@@ -70,17 +70,25 @@ def sha256_bytes(data: bytes) -> str:
 
 def sanitize_payload(source_name: str, payload: dict[str, Any]) -> dict[str, Any]:
     final_record = payload.get("records", [{}])[-1] if payload.get("records") else {}
+    committed = payload.get("committed_run") or {}
+    comparison = payload.get("comparison") or {}
     sanitized: dict[str, Any] = {
         "source_file": source_name,
         "source": payload.get("source"),
-        "backend": payload.get("backend"),
-        "job_id": payload.get("job_id"),
-        "shots": payload.get("shots") or payload.get("total_shots") or payload.get("ghz_shots"),
-        "round_trip_seconds": payload.get("round_trip_seconds"),
-        "qom_compact_payload_bits": payload.get("qom_compact_payload_bits") or payload.get("final_qom_compact_payload_bits") or final_record.get("qom_compact_payload_bits"),
-        "qom_compact_payload_hex": payload.get("qom_compact_payload_hex") or payload.get("final_qom_compact_payload_hex") or final_record.get("qom_compact_payload_hex"),
-        "merkle_root": payload.get("merkle_root") or payload.get("final_merkle_root") or final_record.get("merkle_root"),
+        "backend": payload.get("backend") or committed.get("backend") or comparison.get("backend"),
+        "job_id": payload.get("job_id") or committed.get("job_id") or comparison.get("job_id"),
+        "shots": payload.get("shots") or payload.get("total_shots") or payload.get("ghz_shots") or committed.get("shots") or comparison.get("total_shots") or comparison.get("ghz_shots"),
+        "round_trip_seconds": payload.get("round_trip_seconds") or committed.get("round_trip_seconds") or comparison.get("round_trip_seconds"),
+        "qom_compact_payload_bits": payload.get("qom_compact_payload_bits") or payload.get("final_qom_compact_payload_bits") or committed.get("qom_compact_payload_bits") or comparison.get("qom_compact_payload_bits") or final_record.get("qom_compact_payload_bits"),
+        "qom_compact_payload_hex": payload.get("qom_compact_payload_hex") or payload.get("final_qom_compact_payload_hex") or committed.get("qom_compact_payload_hex") or comparison.get("qom_compact_payload_hex") or final_record.get("qom_compact_payload_hex"),
+        "merkle_root": payload.get("merkle_root") or payload.get("final_merkle_root") or committed.get("merkle_root") or comparison.get("merkle_root") or final_record.get("merkle_root"),
     }
+    if "ghz_population" in committed and "ghz_population" not in payload:
+        payload = dict(payload)
+        payload["ghz_population"] = committed["ghz_population"]
+        payload["raw_error_rate"] = committed.get("raw_error_rate")
+        payload["good_counts_0000_1111"] = committed.get("good_counts_0000_1111")
+        payload["total_counts"] = committed.get("total_counts") or committed.get("shots")
     if "counts" in payload:
         sanitized["counts"] = payload["counts"]
     if "raw_counts" in payload:
@@ -102,6 +110,10 @@ def sanitize_payload(source_name: str, payload: dict[str, Any]) -> dict[str, Any
         sanitized["raw_ghz_population"] = payload["raw_ghz_population"]
         sanitized["mitigated_ghz_population"] = payload["mitigated_ghz_population"]
         sanitized["mitigation_delta"] = payload["mitigation_delta"]
+    if comparison and "mitigated_ghz_population" in comparison:
+        sanitized["raw_ghz_population"] = comparison["raw_ghz_population"]
+        sanitized["mitigated_ghz_population"] = comparison["mitigated_ghz_population"]
+        sanitized["mitigation_delta"] = comparison["mitigation_delta"]
     if "best_energy" in payload:
         sanitized["best_theta"] = payload["best_theta"]
         sanitized["best_energy"] = payload["best_energy"]
@@ -119,17 +131,38 @@ def sanitize_payload(source_name: str, payload: dict[str, Any]) -> dict[str, Any
             for record in payload["records"]
         ]
     if "arms" in payload:
-        sanitized["arms_summary"] = [
-            {
+        arms = []
+        for record in payload["arms"]:
+            successes = None
+            total = record.get("shots")
+            if "survival" in record and total:
+                successes = round(float(record["survival"]) * int(total))
+            ci = wilson_interval(int(successes), int(total)) if successes is not None and total else None
+            selected_by_sequence = bool(payload.get("selected_sequence")) and record.get("sequence") == payload.get("selected_sequence")
+            selected_by_arm = bool(payload.get("selected_arm")) and record.get("arm") == payload.get("selected_arm")
+            arms.append({
                 "arm": record.get("arm"),
                 "sequence": record.get("sequence"),
                 "status": record.get("status"),
                 "survival": record.get("survival"),
-                "selected": record.get("sequence") == payload.get("selected_sequence") or record.get("arm") == payload.get("selected_arm"),
+                "shots": record.get("shots"),
+                "survival_wilson_95": {"low": ci.low, "high": ci.high} if ci else None,
+                "selected": selected_by_sequence or selected_by_arm,
                 "job_id": record.get("job_id"),
-            }
-            for record in payload["arms"]
-        ]
+            })
+        sanitized["arms_summary"] = arms
+        if payload.get("selected_sequence"):
+            selected = next((arm for arm in arms if arm.get("selected")), None)
+            if selected:
+                selected_source = next((record for record in payload["arms"] if record.get("sequence") == selected.get("sequence")), {})
+                selected_aegis = selected_source.get("aegis") or {}
+                sanitized["job_id"] = sanitized.get("job_id") or selected.get("job_id")
+                sanitized["shots"] = sanitized.get("shots") or selected.get("shots")
+                sanitized["qom_compact_payload_bits"] = sanitized.get("qom_compact_payload_bits") or selected_aegis.get("qom_compact_payload_bits")
+                sanitized["qom_compact_payload_hex"] = sanitized.get("qom_compact_payload_hex") or selected_aegis.get("qom_compact_payload_hex")
+                sanitized["merkle_root"] = sanitized.get("merkle_root") or selected_aegis.get("merkle_root")
+                sanitized["selected_survival"] = selected.get("survival")
+                sanitized["selected_survival_wilson_95"] = selected.get("survival_wilson_95")
     if "acceptance_summary" in payload:
         sanitized["acceptance_summary"] = payload["acceptance_summary"]
         sanitized["success_condition_met"] = payload.get("success_condition_met")

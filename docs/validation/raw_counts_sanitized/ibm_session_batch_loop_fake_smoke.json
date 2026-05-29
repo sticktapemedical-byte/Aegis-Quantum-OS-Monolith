@@ -1,7 +1,7 @@
 {
-  "artifact_sha256": "0623465ed47b45357e5dfe5e02c3aeb21077b61c8595a49fcfbfd80709d5035e",
+  "artifact_sha256": "3932697a062dcb444445fd37d81c3c46c846789ca81d8e375eccbe7342faf523",
   "backend": "fake_osaka",
-  "created_utc": "2026-05-29T08:47:11.385471+00:00",
+  "created_utc": "2026-05-29T14:16:12.276732+00:00",
   "job_id": null,
   "merkle_root": "868954883da8f07c1e1de2f9da8ec616330aba4b0209b5ce8bee44da0b1219f3",
   "qom_compact_payload_bits": 176,

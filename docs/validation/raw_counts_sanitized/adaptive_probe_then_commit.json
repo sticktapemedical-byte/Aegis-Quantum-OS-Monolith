@@ -1,14 +1,20 @@
 {
-  "artifact_sha256": "5f75df8e52d341f363b372c40fd9edd1252c80b1128b5e64a1e14eed99c37e9e",
-  "backend": null,
-  "created_utc": "2026-05-29T08:47:11.385471+00:00",
-  "job_id": null,
-  "merkle_root": null,
-  "qom_compact_payload_bits": null,
-  "qom_compact_payload_hex": null,
-  "round_trip_seconds": null,
+  "artifact_sha256": "ad738532456d3a9a6590015fc60eca059d6ebd4bbf02ab6af26d0095bcb84b90",
+  "backend": "ibm_marrakesh",
+  "created_utc": "2026-05-29T14:16:12.276732+00:00",
+  "ghz_population": 0.9501953125,
+  "ghz_population_wilson_95": {
+    "high": 0.9619179958847116,
+    "low": 0.9351075055558195
+  },
+  "job_id": "d8cl0os7avuc73dr5i40",
+  "merkle_root": "fd2dbbcef84b0f40b458ba11450aea8972eae2d4b36db19a6d2bd064604ca994",
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "9544ad45f55000012cb01e830000d77bbc69e3e7135c",
+  "raw_error_rate": 0.0498046875,
+  "round_trip_seconds": 28.015060499994433,
   "selected_backend": "ibm_marrakesh",
-  "shots": null,
+  "shots": 1024,
   "source": "aegis_adaptive_probe_then_commit",
   "source_file": "adaptive_probe_then_commit.json"
 }

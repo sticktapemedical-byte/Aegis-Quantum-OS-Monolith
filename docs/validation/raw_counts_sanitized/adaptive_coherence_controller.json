@@ -5,13 +5,15 @@
       "job_id": null,
       "selected": true,
       "sequence": null,
+      "shots": null,
       "status": null,
-      "survival": null
+      "survival": null,
+      "survival_wilson_95": null
     }
   ],
-  "artifact_sha256": "473927933213429180a5827d21343070d9be9a30f9a66b06793f18cdbd60cbe6",
+  "artifact_sha256": "fd191cd6c750b0ddebc99ec3e5c83344f5e1203d21974c008f1963ab5cd23146",
   "backend": "ibm_marrakesh",
-  "created_utc": "2026-05-29T08:47:11.385471+00:00",
+  "created_utc": "2026-05-29T14:16:12.276732+00:00",
   "job_id": null,
   "merkle_root": null,
   "qom_compact_payload_bits": null,

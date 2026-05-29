@@ -1,19 +1,19 @@
 {
-  "accepted_artifact_count": 18,
+  "accepted_artifact_count": 23,
   "artifact_count": 28,
   "claim_boundary": "Resource accounting over validation artifacts; not refrigerator power measurement.",
-  "mean_accepted_ghz": 0.946826171875,
-  "shots_per_accepted_artifact": 3591.1111111111113,
+  "mean_accepted_ghz": 0.947967529296875,
+  "shots_per_accepted_artifact": 3099.8260869565215,
   "source": "aegis_efficiency_summary",
   "standard_efficiency": {
-    "accepted_results": 18,
-    "jobs_per_accepted_result": 1.5555555555555556,
-    "mean_accepted_quality": 0.3160129123263889,
-    "rerun_count": 10,
-    "rerun_rate": 0.35714285714285715,
-    "shots_per_accepted_result": 3591.1111111111113,
+    "accepted_results": 23,
+    "jobs_per_accepted_result": 1.2173913043478262,
+    "mean_accepted_quality": 0.41256581182065216,
+    "rerun_count": 5,
+    "rerun_rate": 0.17857142857142858,
+    "shots_per_accepted_result": 3099.8260869565215,
     "total_jobs": 28,
-    "total_shots": 64640
+    "total_shots": 71296
   },
-  "total_tracked_shots": 64640
+  "total_tracked_shots": 71296
 }

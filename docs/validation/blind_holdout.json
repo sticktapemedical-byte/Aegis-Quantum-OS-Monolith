@@ -47,13 +47,13 @@
   ],
   "train_count": 18,
   "train_efficiency": {
-    "accepted_results": 9,
-    "jobs_per_accepted_result": 2.0,
-    "mean_accepted_quality": 0.20887586805555555,
-    "rerun_count": 9,
-    "rerun_rate": 0.5,
-    "shots_per_accepted_result": 5077.333333333333,
+    "accepted_results": 14,
+    "jobs_per_accepted_result": 1.2857142857142858,
+    "mean_accepted_quality": 0.40576171875,
+    "rerun_count": 4,
+    "rerun_rate": 0.2222222222222222,
+    "shots_per_accepted_result": 3739.4285714285716,
     "total_jobs": 18,
-    "total_shots": 45696
+    "total_shots": 52352
   }
 }

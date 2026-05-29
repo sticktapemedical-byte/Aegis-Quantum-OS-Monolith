@@ -1,14 +1,20 @@
 {
-  "artifact_sha256": "cbdb4ffa8b4ac4fca2dd628f9d2291c0bf6ff9d31eb77e31f7cf533fd7a249d9",
-  "backend": null,
-  "created_utc": "2026-05-29T08:47:11.385471+00:00",
-  "job_id": null,
-  "merkle_root": null,
-  "qom_compact_payload_bits": null,
-  "qom_compact_payload_hex": null,
-  "round_trip_seconds": null,
+  "artifact_sha256": "ecbd86b3ef7b728170dc6f496ec1229a9e5d75458b01ea41921a807095b37da0",
+  "backend": "ibm_marrakesh",
+  "created_utc": "2026-05-29T14:16:12.276732+00:00",
+  "ghz_population": 0.95703125,
+  "ghz_population_wilson_95": {
+    "high": 0.9678374833969637,
+    "low": 0.9428087957227077
+  },
+  "job_id": "d8cl1n47avuc73dr5j3g",
+  "merkle_root": "b6ff316b44be442b56e75fc7f2250bd0cfd389dceed66dbf52be38a004b3a4fb",
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "9551e5bbf54000012cb41e6e00003a641e220a6114aa",
+  "raw_error_rate": 0.04296875,
+  "round_trip_seconds": 31.387898599998152,
   "selected_backend": "ibm_marrakesh",
-  "shots": null,
+  "shots": 1024,
   "source": "aegis_adaptive_backend_selector",
   "source_file": "adaptive_backend_selector.json"
 }

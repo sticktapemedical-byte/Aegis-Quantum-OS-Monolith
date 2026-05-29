@@ -1,45 +1,57 @@
 {
-  "claim_boundary": "Compares software gating/accounting modes over existing artifacts; not new QPU evidence.",
+  "claim_boundary": "Compares software gating/accounting modes over existing artifacts; not new QPU evidence. Quality fields are intentionally split to avoid comparing raw target fidelity against governed software scores.",
   "modes": {
     "full_aegis": {
-      "accepted_results": 18,
-      "jobs_per_accepted_result": 1.5555555555555556,
-      "mean_accepted_quality": 0.3160129123263889,
-      "rerun_count": 10,
-      "rerun_rate": 0.35714285714285715,
-      "shots_per_accepted_result": 3591.1111111111113,
+      "accepted_results": 23,
+      "accepted_target_quality_mean": 0.873349374178728,
+      "governed_quality_score_mean": 0.9577952633586944,
+      "jobs_per_accepted_result": 1.2173913043478262,
+      "quality_note": "Do not compare raw_target_quality_mean to governed_quality_score_mean as one metric. Raw target quality is measured from GHZ/count data; governed quality is a stricter software score over accepted artifacts.",
+      "raw_target_quality_mean": 0.8727043418653018,
+      "rerun_count": 5,
+      "rerun_rate": 0.17857142857142858,
+      "shots_per_accepted_result": 3099.8260869565215,
       "total_jobs": 28,
-      "total_shots": 64640
+      "total_shots": 71296
     },
     "no_anchor_gate": {
-      "accepted_results": 18,
-      "jobs_per_accepted_result": 1.5555555555555556,
-      "mean_accepted_quality": 0.3160129123263889,
-      "rerun_count": 10,
-      "rerun_rate": 0.35714285714285715,
-      "shots_per_accepted_result": 3591.1111111111113,
+      "accepted_results": 23,
+      "accepted_target_quality_mean": 0.873349374178728,
+      "governed_quality_score_mean": 0.9577952633586944,
+      "jobs_per_accepted_result": 1.2173913043478262,
+      "quality_note": "Do not compare raw_target_quality_mean to governed_quality_score_mean as one metric. Raw target quality is measured from GHZ/count data; governed quality is a stricter software score over accepted artifacts.",
+      "raw_target_quality_mean": 0.8727043418653018,
+      "rerun_count": 5,
+      "rerun_rate": 0.17857142857142858,
+      "shots_per_accepted_result": 3099.8260869565215,
       "total_jobs": 28,
-      "total_shots": 64640
+      "total_shots": 71296
     },
     "no_qom_lineage": {
       "accepted_results": 0,
+      "accepted_target_quality_mean": null,
+      "governed_quality_score_mean": null,
       "jobs_per_accepted_result": null,
-      "mean_accepted_quality": 0.0,
+      "quality_note": "Do not compare raw_target_quality_mean to governed_quality_score_mean as one metric. Raw target quality is measured from GHZ/count data; governed quality is a stricter software score over accepted artifacts.",
+      "raw_target_quality_mean": 0.8727043418653018,
       "rerun_count": 28,
       "rerun_rate": 1.0,
       "shots_per_accepted_result": null,
       "total_jobs": 28,
-      "total_shots": 64640
+      "total_shots": 71296
     },
     "raw_only": {
-      "accepted_results": 18,
-      "jobs_per_accepted_result": 1.5555555555555556,
-      "mean_accepted_quality": 0.9826795789930556,
-      "rerun_count": 10,
-      "rerun_rate": 0.35714285714285715,
-      "shots_per_accepted_result": 3591.1111111111113,
+      "accepted_results": 23,
+      "accepted_target_quality_mean": 0.873349374178728,
+      "governed_quality_score_mean": 0.9644579099474629,
+      "jobs_per_accepted_result": 1.2173913043478262,
+      "quality_note": "Do not compare raw_target_quality_mean to governed_quality_score_mean as one metric. Raw target quality is measured from GHZ/count data; governed quality is a stricter software score over accepted artifacts.",
+      "raw_target_quality_mean": 0.8727043418653018,
+      "rerun_count": 5,
+      "rerun_rate": 0.17857142857142858,
+      "shots_per_accepted_result": 3099.8260869565215,
       "total_jobs": 28,
-      "total_shots": 64640
+      "total_shots": 71296
     }
   },
   "source": "aegis_ablation_workflow"

@@ -1,5 +1,5 @@
 {
-  "artifact_sha256": "4c4141236004b49e2facd3f4f724321375e54cb33545b2d5046dcf4bc1025175",
+  "artifact_sha256": "254290a4ae401ea53427d933e23186a0fe07c4ef437f0f6fadca6f122cd2de6c",
   "backend": "ibm_marrakesh",
   "counts": {
     "0000": 121,
@@ -8,7 +8,7 @@
     "1110": 3,
     "1111": 1
   },
-  "created_utc": "2026-05-29T08:47:11.385471+00:00",
+  "created_utc": "2026-05-29T14:16:12.276732+00:00",
   "ghz_population": 0.953125,
   "ghz_population_wilson_95": {
     "high": 0.9783421558280763,

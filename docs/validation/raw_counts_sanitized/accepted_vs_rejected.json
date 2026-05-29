@@ -49,9 +49,9 @@
       "std_ghz": 0.006987712429686843
     }
   ],
-  "artifact_sha256": "c51f7efbec564f48334e8a381f421dcd8d9bbb8bb67f31aeb67f834f6b63bb89",
+  "artifact_sha256": "64032435b8e74dd189805cc73081081eb0a4801b575ee3706ef1d3f255c97ed2",
   "backend": "ibm_marrakesh",
-  "created_utc": "2026-05-29T08:47:11.385471+00:00",
+  "created_utc": "2026-05-29T14:16:12.276732+00:00",
   "job_id": null,
   "merkle_root": "d83bd389a0351c308186375214b4b9817f643cf7e332c16d149ba5378d9ea9f7",
   "qom_compact_payload_bits": 176,

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -53,6 +54,27 @@ def pct(value: Any) -> str:
         return "-"
 
 
+def fit_value(value: Any) -> str:
+    try:
+        value = float(value)
+        if value >= 999000:
+            return "no decay fit"
+        return f"{value:,.2f}"
+    except Exception:
+        return "-"
+
+
+def wilson_bounds(successes: int, total: int) -> tuple[float, float] | None:
+    if total <= 0 or successes < 0 or successes > total:
+        return None
+    z = 1.959963984540054
+    p_hat = successes / total
+    denom = 1.0 + (z * z / total)
+    center = (p_hat + (z * z) / (2.0 * total)) / denom
+    margin = z * math.sqrt((p_hat * (1.0 - p_hat) / total) + (z * z) / (4.0 * total * total)) / denom
+    return max(0.0, center - margin), min(1.0, center + margin)
+
+
 def short_hash(value: Any, n: int = 16) -> str:
     value = str(value or "")
     return value[:n] + ("..." if len(value) > n else "")
@@ -96,13 +118,13 @@ def add_kv(story: list[Any], title: str, payload: dict[str, Any], keys: list[str
 def campaign_sections(root: Path, story: list[Any], styles) -> None:
     campaign_files = [
         ("Accepted vs Rejected Quality Split", "accepted_vs_rejected.json"),
-        ("Delay-Ramp Degradation Detection", "delay_ramp.json"),
+        ("Delay-Ramp Degradation Detection - Inconclusive", "delay_ramp.json"),
         ("Readout Mitigation Repeat", "readout_mitigation_repeat.json"),
         ("Probe Then Commit", "adaptive_probe_then_commit.json"),
         ("Adaptive Backend Selector", "adaptive_backend_selector.json"),
         ("Adaptive Layout Selector", "adaptive_layout_selector.json"),
         ("Adaptive Mitigation Selector", "adaptive_mitigation_selector.json"),
-        ("Adaptive Coherence Controller", "adaptive_coherence_controller.json"),
+        ("Adaptive Coherence Controller - No Decay Fit", "adaptive_coherence_controller.json"),
         ("Dynamical Decoupling Insertion", "dynamical_decoupling_insertion.json"),
         ("Dynamic Circuit Governance", "dynamic_circuit_governance.json"),
         ("Calibration Campaign", "calibration_campaign.json"),
@@ -128,7 +150,6 @@ def campaign_sections(root: Path, story: list[Any], styles) -> None:
                 "selected_backend",
                 "selected_sequence",
                 "selected_arm",
-                "selected_t_eff_ms",
                 "total_shots",
                 "mean_raw_ghz",
                 "mean_mitigated_ghz",
@@ -138,6 +159,10 @@ def campaign_sections(root: Path, story: list[Any], styles) -> None:
             ],
             styles,
         )
+        if name == "delay_ramp.json":
+            story.append(p("Interpretation: this run is preserved as a negative/inconclusive result. The tested delay path did not produce monotonic degradation, so it should not be used as degradation-detection proof.", styles["BodyText"]))
+        if name == "adaptive_coherence_controller.json":
+            story.append(p("Interpretation: the controller emitted a capped sentinel because the returned outputs did not expose a meaningful decay curve. Treat this as no valid T_eff fit, not as a physical lifetime estimate.", styles["BodyText"]))
 
         if "acceptance_summary" in payload:
             rows = [["Group", "Count", "Mean GHZ", "Min", "Max", "q_conf mean", "Wilson 95 low", "Wilson 95 high"]]
@@ -224,7 +249,7 @@ def campaign_sections(root: Path, story: list[Any], styles) -> None:
             story.append(Spacer(1, 0.1 * inch))
 
         if "arms" in payload:
-            rows = [["Arm/Sequence", "Status", "Job", "Shots", "Survival/GHZ", "Fit t_eff ms", "Gate"]]
+            rows = [["Arm/Sequence", "Status", "Job", "Shots", "Survival/GHZ", "Wilson 95%", "Fit t_eff", "Gate"]]
             for arm in payload["arms"]:
                 fit = arm.get("fit") or {}
                 records = arm.get("records") or []
@@ -236,17 +261,24 @@ def campaign_sections(root: Path, story: list[Any], styles) -> None:
                             short_hash(rec.get("job_id"), 18),
                             rec.get("shots"),
                             pct(rec.get("ghz_population")),
-                            fit.get("t_eff_ms"),
+                            "",
+                            fit_value(fit.get("t_eff_ms")),
                             rec.get("continuity_gate_passed"),
                         ])
                 else:
+                    ci = arm.get("survival_wilson_95") or {}
+                    if not ci and arm.get("survival") is not None and arm.get("shots"):
+                        bounds = wilson_bounds(round(float(arm["survival"]) * int(arm["shots"])), int(arm["shots"]))
+                        if bounds:
+                            ci = {"low": bounds[0], "high": bounds[1]}
                     rows.append([
                         arm.get("arm") or arm.get("sequence"),
                         arm.get("status"),
                         short_hash(arm.get("job_id"), 18),
                         arm.get("shots"),
                         pct(arm.get("survival")),
-                        fit.get("t_eff_ms"),
+                        f"{pct(ci.get('low'))} - {pct(ci.get('high'))}" if ci else "",
+                        fit_value(fit.get("t_eff_ms")),
                         None,
                     ])
             story.append(table(rows))
@@ -265,7 +297,7 @@ def sanitized_artifact_sections(root: Path, story: list[Any], styles) -> None:
     story.append(PageBreak())
     story.append(p("Complete Sanitized Validation Vault", styles["Heading2"]))
     story.append(p(f"This appendix lists every sanitized validation artifact currently represented in the public-safe vault: {len(artifacts)} artifacts.", styles["BodyText"]))
-    rows = [["Artifact", "Source", "Backend", "Job", "Shots", "GHZ/Raw", "Mitigated", "Gate/Status", ".QOM", "Merkle"]]
+    rows = [["Artifact", "Source", "Backend", "Job", "Shots", "GHZ/Raw", "Mitigated/Survival", "Gate/Status", ".QOM", "Merkle"]]
     for path in artifacts:
         payload = load_json(path)
         status = payload.get("status")
@@ -278,7 +310,7 @@ def sanitized_artifact_sections(root: Path, story: list[Any], styles) -> None:
             short_hash(payload.get("job_id"), 14),
             payload.get("shots"),
             pct(payload.get("ghz_population") or payload.get("raw_ghz_population")),
-            pct(payload.get("mitigated_ghz_population")),
+            pct(payload.get("mitigated_ghz_population") if payload.get("mitigated_ghz_population") is not None else payload.get("selected_survival")),
             status,
             payload.get("qom_compact_payload_bits"),
             short_hash(payload.get("merkle_root"), 12),
@@ -308,10 +340,11 @@ def summary_sections(root: Path, story: list[Any], styles) -> None:
                 t = payload["train_efficiency"]
                 story.append(table([["Split", "Artifacts", "Accepted", "Rerun Rate", "Shots / Accepted"], ["holdout", payload.get("holdout_count"), h.get("accepted_results"), pct(h.get("rerun_rate")), h.get("shots_per_accepted_result")], ["train", payload.get("train_count"), t.get("accepted_results"), pct(t.get("rerun_rate")), t.get("shots_per_accepted_result")]]))
             elif "modes" in payload:
-                rows = [["Mode", "Accepted", "Rerun Rate", "Shots / Accepted", "Mean Quality"]]
+                rows = [["Mode", "Accepted", "Rerun Rate", "Shots / Accepted", "Accepted Target Quality", "Governed Score"]]
                 for mode, values in payload["modes"].items():
-                    rows.append([mode, values.get("accepted_results"), pct(values.get("rerun_rate")), values.get("shots_per_accepted_result"), values.get("mean_accepted_quality") / 1 if values.get("mean_accepted_quality") is not None else None])
+                    rows.append([mode, values.get("accepted_results"), pct(values.get("rerun_rate")), values.get("shots_per_accepted_result"), pct(values.get("accepted_target_quality_mean")), values.get("governed_quality_score_mean")])
                 story.append(table(rows))
+                story.append(p("Ablation quality fields are split: accepted target quality is GHZ/count-derived, while governed score is a stricter software score. They should not be read as one interchangeable metric.", styles["BodyText"]))
             story.append(Spacer(1, 0.12 * inch))
 
 

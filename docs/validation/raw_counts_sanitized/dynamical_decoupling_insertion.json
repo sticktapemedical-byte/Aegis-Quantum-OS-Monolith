@@ -3,46 +3,71 @@
     {
       "arm": null,
       "job_id": "d8cl43qjki0s73are790",
-      "selected": true,
+      "selected": false,
       "sequence": "none",
+      "shots": 512,
       "status": "real_job_complete",
-      "survival": 0.3359375
+      "survival": 0.3359375,
+      "survival_wilson_95": {
+        "high": 0.37793659281183783,
+        "low": 0.29638194609723306
+      }
     },
     {
       "arm": null,
       "job_id": "d8cl472jki0s73are7e0",
-      "selected": true,
+      "selected": false,
       "sequence": "xx",
+      "shots": 512,
       "status": "real_job_complete",
-      "survival": 0.677734375
+      "survival": 0.677734375,
+      "survival_wilson_95": {
+        "high": 0.7167623651805154,
+        "low": 0.6360592176679912
+      }
     },
     {
       "arm": null,
       "job_id": "d8cl4a47avuc73dr5mq0",
       "selected": true,
       "sequence": "xy4",
+      "shots": 512,
       "status": "real_job_complete",
-      "survival": 0.701171875
+      "survival": 0.701171875,
+      "survival_wilson_95": {
+        "high": 0.7392035932391127,
+        "low": 0.6601439126223837
+      }
     },
     {
       "arm": null,
       "job_id": "d8cl4d2jki0s73are7lg",
-      "selected": true,
+      "selected": false,
       "sequence": "cpmg",
+      "shots": 512,
       "status": "real_job_complete",
-      "survival": 0.658203125
+      "survival": 0.658203125,
+      "survival_wilson_95": {
+        "high": 0.6979730953806861,
+        "low": 0.6160768849569956
+      }
     }
   ],
-  "artifact_sha256": "0c6387d1407025dfcdb7ac0f47421ef3e12823c631c538e53fa820c7ef906d0e",
+  "artifact_sha256": "cd7321032ada88b6ad7ea33eb618977c9101346bc5d3602ce73ee837e576ac7d",
   "backend": "ibm_marrakesh",
-  "created_utc": "2026-05-29T08:47:11.385471+00:00",
-  "job_id": null,
-  "merkle_root": null,
-  "qom_compact_payload_bits": null,
-  "qom_compact_payload_hex": null,
+  "created_utc": "2026-05-29T14:16:12.276732+00:00",
+  "job_id": "d8cl4a47avuc73dr5mq0",
+  "merkle_root": "6b90e9d943955ce4a44c60f17d8fde7cfab14c680f225f16dd6c22d7d9e24b4d",
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "8fb711e4f80100012e76158f000035e03c29b8173512",
   "round_trip_seconds": null,
   "selected_sequence": "xy4",
-  "shots": null,
+  "selected_survival": 0.701171875,
+  "selected_survival_wilson_95": {
+    "high": 0.7392035932391127,
+    "low": 0.6601439126223837
+  },
+  "shots": 512,
   "source": "aegis_dynamical_decoupling_insertion",
   "source_file": "dynamical_decoupling_insertion.json"
 }

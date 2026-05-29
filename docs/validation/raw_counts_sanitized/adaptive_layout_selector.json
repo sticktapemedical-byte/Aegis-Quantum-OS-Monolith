@@ -1,12 +1,18 @@
 {
-  "artifact_sha256": "5202b2943e6a4ca53bee28f1ce2165ff9a6e7f5464c2eaa2a758892d6894e818",
+  "artifact_sha256": "d2be866395d199c92787507599fa0ae7693597613bb5924765ba9a7e619494a1",
   "backend": "ibm_marrakesh",
-  "created_utc": "2026-05-29T08:47:11.385471+00:00",
-  "job_id": null,
-  "merkle_root": null,
-  "qom_compact_payload_bits": null,
-  "qom_compact_payload_hex": null,
-  "round_trip_seconds": null,
+  "created_utc": "2026-05-29T14:16:12.276732+00:00",
+  "ghz_population": 0.9423828125,
+  "ghz_population_wilson_95": {
+    "high": 0.9550704780499838,
+    "low": 0.9263884203286726
+  },
+  "job_id": "d8cl2ib8ch0s738v1o0g",
+  "merkle_root": "020ea955360466e4df2421796523e7b750fbc48db034bd09a9df9afa8f30682d",
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "9576f4cbf3d200012bbb235800000542b1e9ea82afd2",
+  "raw_error_rate": 0.0576171875,
+  "round_trip_seconds": 87.21643260000565,
   "selected_layout": {
     "chain_length": 3,
     "layout": [
@@ -19,7 +25,7 @@
     "mean_readout_error": 0.006317138671875,
     "score": 0.9847890014648437
   },
-  "shots": null,
+  "shots": 1024,
   "source": "aegis_adaptive_layout_selector",
   "source_file": "adaptive_layout_selector.json"
 }

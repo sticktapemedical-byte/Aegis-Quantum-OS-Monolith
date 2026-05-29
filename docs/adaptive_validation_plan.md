@@ -1,4 +1,4 @@
-# AEGIS Adaptive IBM Validation Plan
+# AEGIS Quantum Workload Reliability Validation Plan - Adaptive IBM Appendix
 
 This document maps the QPU upgrade plan to the current repository state. The claim boundary remains narrow: AEGIS currently governs returned IBM Quantum outputs and can select later workloads; it does not modify a running QPU job in real time.
 

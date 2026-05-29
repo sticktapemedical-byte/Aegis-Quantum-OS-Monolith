@@ -63,7 +63,7 @@ Observed synthetic cascade variance reductions:
 - Taylor-domain projection: asynchronous timing-slew drift is reduced from approximately `0.0633` to `0.0055`.
 - Wrapped-delta phase unwrapping: wrapped phase-cut acceleration variance is reduced from approximately `0.2354` to `8.09e-08` in synthetic trials.
 
-## Real Hardware Validation: IBM Quantum Runtime
+## Real Hardware Results: IBM Quantum Runtime
 
 On May 28, 2026, the optional IBM bridge executed a short validation set on real IBM Quantum hardware. The full ledger is stored at [`docs/validation/AEGIS_Master_IBM_Quantum_Validation_Report.md`](docs/validation/AEGIS_Master_IBM_Quantum_Validation_Report.md).
 
@@ -72,12 +72,15 @@ This is a real ingestion and governance test against noisy hardware output. AEGI
 Master ledger highlights:
 
 - Backends used: `ibm_marrakesh`, `ibm_kingston`, `ibm_fez`
-- Total real hardware shots represented: `6,016` across short validation jobs
+- Real backend jobs represented: `11`
+- Total real hardware shots represented: `15,232` across short validation jobs
 - Initial 4-qubit GHZ run on `ibm_marrakesh`: `94.24%` GHZ population (`965/1024` shots)
 - Same-backend repeatability run on `ibm_marrakesh`: `96.09%` GHZ population (`492/512` shots)
+- High-shot GHZ stability run on `ibm_marrakesh`: `95.19%` GHZ population (`3899/4096` shots), continuity passed, `NORMAL`
 - Cross-device GHZ runs: `ibm_kingston` at `92.58%`, `ibm_fez` at `83.59%`
 - Fast single-qubit coherence/readout pass: `q_conf=0.96972`, continuity passed, `NORMAL`
-- Corrected commanded setpoint sweeps: `10/10` setpoint validations passed across 128-shot and 256-shot sweeps
+- Corrected commanded setpoint sweeps: `15/15` setpoint validations passed across 128-shot, 256-shot, and 1024-shot sweeps
+- High-shot commanded setpoint sweep on `ibm_marrakesh`: `5/5` setpoints passed, mean absolute setpoint error `0.0043`, `5120` total shots
 - Compact `.QOM` frames generated at `176 bits` with Merkle lineage roots
 
 Result: the AEGIS control-plane bridge successfully ingested real noisy IBM Quantum counts, converted them into the repository's telemetry schema, evaluated continuity and commanded-setpoint gates, and generated compact `.QOM` metadata frames with Merkle lineage.

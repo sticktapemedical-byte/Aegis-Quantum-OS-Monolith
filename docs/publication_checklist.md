@@ -11,5 +11,6 @@ Use this checklist before publishing or submitting a validation report.
 - Include ablation output from `examples/ablation_workflow.py`.
 - Include resource accounting from `examples/efficiency_report.py`.
 - Include report artifacts from `examples/generate_validation_report.py`.
+- For DD, dynamic-circuit, calibration, and pulse-control modules, state whether the result was synthetic, unsupported, or a real backend job.
 - Label all IBM hardware results as real returned-output ingestion and governance results.
 - Label all fake/synthetic runs clearly as fake or synthetic.

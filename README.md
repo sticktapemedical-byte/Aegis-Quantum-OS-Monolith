@@ -243,6 +243,10 @@ If Qiskit is not installed, install the optional integration packages in a separ
 - `examples/adaptive_layout_selector.py`: ranks candidate qubit-chain layouts and can commit a selected workload.
 - `examples/adaptive_mitigation_selector.py`: selects raw vs readout-mitigated policy based on uplift and overhead.
 - `examples/adaptive_coherence_controller.py`: fits effective delay-ramp survival and selects a coherence-sensitive policy arm.
+- `examples/dynamical_decoupling_insertion.py`: builds idle-window echo/DD-style candidate circuits where backend support allows.
+- `examples/dynamic_circuit_governance.py`: probes a small mid-circuit measurement/feed-forward workflow.
+- `examples/calibration_campaign.py`: RB/T1/T2/tomography campaign harness with synthetic defaults.
+- `examples/pulse_level_controls.py`: pulse-policy register harness for Omega-drive, ZNE lambda, measurement efficiency, and thermal headroom.
 - `examples/blind_holdout.py`: creates deterministic blind train/holdout artifact splits.
 - `examples/ablation_workflow.py`: compares partial AEGIS modes over validation artifacts.
 - `examples/generate_validation_report.py`: generates CSV, Markdown, and SVG report assets.

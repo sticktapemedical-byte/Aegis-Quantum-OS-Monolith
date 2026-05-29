@@ -23,6 +23,10 @@ This document maps the QPU upgrade plan to the current repository state. The cla
 | Adaptive layout selector | `examples/adaptive_layout_selector.py` ranks candidate qubit chains and can commit a selected workload. |
 | Adaptive mitigation selector | `examples/adaptive_mitigation_selector.py` compares raw vs readout-mitigated quality and selects a later policy. |
 | Adaptive coherence controller | `examples/adaptive_coherence_controller.py` fits effective delay-ramp survival and selects the best policy arm in synthetic mode or real delay-ramp mode. |
+| Dynamical decoupling insertion harness | `examples/dynamical_decoupling_insertion.py` builds idle-window echo/DD-style arms and runs synthetic by default or real if backend/API support allows. |
+| Dynamic-circuit governance harness | `examples/dynamic_circuit_governance.py` builds a small mid-circuit measurement/feed-forward template and reports unsupported cleanly when unavailable. |
+| RB/T1/T2/tomography campaign harness | `examples/calibration_campaign.py` produces synthetic calibration proxies and reserves `--real` for a dedicated calibrated hardware campaign. |
+| Pulse-level control policy registers | `examples/pulse_level_controls.py` records Omega-drive, ZNE lambda, eta-eff, and thermal-headroom policy decisions without claiming public-backend pulse access. |
 | Resource efficiency summary | `examples/efficiency_report.py` summarizes shots per accepted artifact from the sanitized vault. |
 | Efficiency utilities | `aegis_efficiency.py` computes accepted results, rerun rate, and shots/jobs per accepted result. |
 | Blind holdout workflow | `examples/blind_holdout.py` creates deterministic train/holdout splits over sanitized artifacts. |
@@ -43,6 +47,8 @@ python examples/adaptive_backend_selector.py --real --backends ibm_marrakesh,ibm
 python examples/adaptive_layout_selector.py --real --backend ibm_marrakesh --probe-shots 256 --commit-shots 1024 --output adaptive_layout_selector.json
 python examples/adaptive_mitigation_selector.py --real --backend ibm_marrakesh --ghz-shots 1024 --calibration-shots 256 --output adaptive_mitigation_selector.json
 python examples/adaptive_coherence_controller.py --real --backend ibm_marrakesh --shots 512 --delays-ms 0,1,2,5 --output adaptive_coherence_controller.json
+python examples/dynamical_decoupling_insertion.py --real --backend ibm_marrakesh --shots 512 --delay-us 50 --output dynamical_decoupling_insertion.json
+python examples/dynamic_circuit_governance.py --real --backend ibm_marrakesh --shots 256 --output dynamic_circuit_governance.json
 python examples/efficiency_report.py --output docs/validation/efficiency_summary.json
 python examples/blind_holdout.py --output docs/validation/blind_holdout.json
 python examples/ablation_workflow.py --output docs/validation/ablation_workflow.json
@@ -53,9 +59,9 @@ python examples/generate_validation_report.py --outdir docs/validation/reports
 
 | Plan item | Status |
 | --- | --- |
-| Dynamical decoupling controller | Synthetic policy-arm controller is implemented; true DD pulse/scheduler insertion is still future work. |
-| Dynamic-circuit feedback | Not yet implemented; requires supported IBM backend features and separate circuit design. |
-| RB/T1/T2/tomography campaign | Not yet implemented as a full calibration-grade experiment matrix. |
+| Dynamical decoupling controller | Idle-window echo/DD-style insertion harness is implemented; pulse-calibrated DD scheduler insertion remains backend/API dependent. |
+| Dynamic-circuit feedback | Mid-circuit template harness is implemented; real execution depends on backend/API support. |
+| RB/T1/T2/tomography campaign | Synthetic campaign harness is implemented; real calibrated campaign requires explicit shot budget and a dedicated protocol. |
 | Publication PNG plots | SVG/CSV/Markdown report generation is implemented; PNG generation is deferred to avoid extra plotting dependencies. |
 
 ## Operating Rule

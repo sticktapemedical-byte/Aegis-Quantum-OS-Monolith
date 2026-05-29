@@ -72,8 +72,8 @@ This is a real ingestion and governance test against noisy hardware output. AEGI
 Master ledger highlights:
 
 - Backends used: `ibm_marrakesh`, `ibm_kingston`, `ibm_fez`
-- Real backend jobs represented: `11`
-- Total real hardware shots represented: `15,232` across short validation jobs
+- Real backend jobs represented: `15`
+- Total real hardware shots represented: `25,984` across validation jobs
 - Initial 4-qubit GHZ run on `ibm_marrakesh`: `94.24%` GHZ population (`965/1024` shots)
 - Same-backend repeatability run on `ibm_marrakesh`: `96.09%` GHZ population (`492/512` shots)
 - High-shot GHZ stability run on `ibm_marrakesh`: `95.19%` GHZ population (`3899/4096` shots), continuity passed, `NORMAL`
@@ -81,6 +81,9 @@ Master ledger highlights:
 - Fast single-qubit coherence/readout pass: `q_conf=0.96972`, continuity passed, `NORMAL`
 - Corrected commanded setpoint sweeps: `15/15` setpoint validations passed across 128-shot, 256-shot, and 1024-shot sweeps
 - High-shot commanded setpoint sweep on `ibm_marrakesh`: `5/5` setpoints passed, mean absolute setpoint error `0.0043`, `5120` total shots
+- Basic readout mitigation comparison: raw GHZ population `95.41%`, locally mitigated GHZ population `96.86%`, delta `+1.45 percentage points`
+- Small VQE-style variational scan: best toy-H2 energy `-1.0150` at `theta=0.2`; corrected setpoint version passed `3/3` continuity gates
+- Cross-depth GHZ stress: depth-stressed circuits drove target-state population down to `0.78%` to `7.62%`, demonstrating high-error ingestion and fail-safe non-pass decisions
 - Compact `.QOM` frames generated at `176 bits` with Merkle lineage roots
 
 Result: the AEGIS control-plane bridge successfully ingested real noisy IBM Quantum counts, converted them into the repository's telemetry schema, evaluated continuity and commanded-setpoint gates, and generated compact `.QOM` metadata frames with Merkle lineage.

@@ -12,16 +12,16 @@ They are not presented as a broad benchmark of IBM hardware, a device calibratio
 
 | Category | Value |
 |---|---:|
-| Real backend jobs represented | 11 |
+| Real backend jobs represented | 15 |
 | IBM backends used | `ibm_marrakesh`, `ibm_kingston`, `ibm_fez` |
-| Total shots represented | 15,232 |
+| Total shots represented | 25,984 |
 | Multi-backend GHZ devices tested | 3 |
 | Corrected setpoint validations | 15 / 15 |
 | Compact `.QOM` frame width | 176 bits |
 
 ## Statistical Rigor Note
 
-This is an early end-to-end validation set. The 11 hardware jobs prove that the bridge can execute, ingest, score, serialize, and ledger real backend results. They do not establish device-level performance claims.
+This is an early end-to-end validation set. The 15 hardware jobs prove that the bridge can execute, ingest, score, serialize, and ledger real backend results. They do not establish device-level performance claims.
 
 Most individual runs use 128 to 512 shots, with one 1024-shot GHZ run, one 4096-shot GHZ run, two 1280-shot phase-sweep jobs, and one 5120-shot high-resolution setpoint sweep. Stronger future studies should add:
 
@@ -46,6 +46,10 @@ Most individual runs use 128 to 512 shots, with one 1024-shot GHZ run, one 4096-
 | Corrected commanded setpoint sweep | `ibm_marrakesh` | `d8cfd4ijki0s73ar6tkg` | 640 | Setpoints `5/5`, mean abs error `0.0063` | `NORMAL`; no anchor dispute | Reframed each phase as an intentional calibration target with a fresh anchor window. |
 | Corrected full-capacity setpoint sweep | `ibm_marrakesh` | `d8cfdvqjki0s73ar6uog` | 1280 | Setpoints `5/5`, mean abs error `0.0219` | `NORMAL`; final `.QOM` generated | Fuller corrected setpoint run with 256 shots per phase. |
 | High-shot commanded setpoint sweep | `ibm_marrakesh` | `d8cfk538amns73bjg5gg` | 5120 | Setpoints `5/5`, mean abs error `0.0043` | `NORMAL`; final `.QOM` generated | Higher-resolution commanded setpoint validation with 1024 shots per phase. |
+| Readout mitigation comparison | `ibm_marrakesh` | `d8cfma2jki0s73ar78a0` | 3072 | Raw GHZ `95.41%`; locally mitigated GHZ `96.86%`; delta `+1.45 pp` | Raw AEGIS continuity passed, `NORMAL` | Compared raw counts, basic local readout assignment mitigation, and AEGIS governance over the raw data path. |
+| Small VQE-style variational scan | `ibm_marrakesh` | `d8cfmgs7avuc73dqumgg` | 3072 | Best toy-H2 energy `-1.0210` at `theta=0.2` | First theta passed; later theta changes failed closed as a continuous track | Demonstrated ingestion of optimization-style circuit outputs instead of only GHZ/setpoint circuits. |
+| Corrected VQE-style setpoint scan | `ibm_marrakesh` | `d8cfn0qjki0s73ar7990` | 3072 | Best toy-H2 energy `-1.0150` at `theta=0.2` | `3/3` continuity gates passed, `NORMAL` | Treated each variational theta as a declared setpoint, matching the corrected validation framing. |
+| Cross-depth GHZ noise stress | `ibm_marrakesh` | `d8cfn9j8amns73bjg950` | 1536 | Depth target-state population ranged from `0.78%` to `7.62%` | Continuity failed safely for all stressed depths | Added deeper gate layers to push the device into a high-error regime and verify non-pass decisions. |
 
 ## Highlights
 
@@ -56,6 +60,9 @@ Most individual runs use 128 to 512 shots, with one 1024-shot GHZ run, one 4096-
 - The corrected commanded-setpoint sweeps passed all setpoint checks after the test declared each phase as an intentional calibration target.
 - The 4096-shot GHZ run produced `95.19%` target-state population and passed continuity under `NORMAL` governance.
 - The 1024-shot-per-phase setpoint sweep passed `5/5` commanded setpoints with mean absolute error `0.0043`.
+- The readout mitigation comparison improved target-state mass from `95.41%` raw to `96.86%` after local assignment-matrix mitigation; AEGIS separately governed the raw data path.
+- The corrected VQE-style scan passed `3/3` declared variational setpoints and produced valid `.QOM`/Merkle records.
+- The cross-depth stress run intentionally produced high-error outputs and the control plane refused continuity passes while still recording lineage.
 
 ## Technical Breakdown
 
@@ -66,6 +73,8 @@ Most individual runs use 128 to 512 shots, with one 1024-shot GHZ run, one 4096-
 5. The kernel executed projection, wrapped-delta phase unwrapping, quorum/anchor checks, governance bitmask evaluation, compact `.QOM` emission, and Merkle commit.
 6. Continuous trajectory tests and commanded setpoint tests are intentionally separated: continuity gates are strict trajectory-corridor checks, while setpoint validation checks whether declared calibration targets were matched.
 7. The compact `.QOM` payload is implemented in `AegisContinuityKernel.emit_compact_qom_payload(...)` using `struct.pack(">IHHHHHQ", ...)`, producing exactly 22 bytes / 176 bits. `tests/test_kernel.py::test_qom_compact_payload_is_exact_176_bit_struct` unpacks the emitted bytes and validates the field boundaries.
+8. The readout mitigation comparison uses local per-qubit assignment matrices estimated from calibration circuits. It is a basic classical mitigation baseline, separate from AEGIS governance.
+9. The VQE-style scan uses a small two-qubit ansatz and toy H2 Hamiltonian expectation model to validate optimization-style circuit ingestion.
 
 ## Local Artifacts
 

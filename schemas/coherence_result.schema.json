@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AEGIS Coherence Result",
+  "type": "object",
+  "required": ["source", "arms", "selected_arm", "claim_boundary"],
+  "properties": {
+    "source": {"type": "string"},
+    "real": {"type": "boolean"},
+    "backend": {"type": "string"},
+    "arms": {"type": "array"},
+    "selected_arm": {"type": "string"},
+    "selected_t_eff_ms": {"type": "number"},
+    "claim_boundary": {"type": "string"}
+  }
+}

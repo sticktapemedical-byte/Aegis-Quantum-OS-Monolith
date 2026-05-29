@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AEGIS Committed Run",
+  "type": "object",
+  "required": ["source", "committed_run", "claim_boundary"],
+  "properties": {
+    "source": {"type": "string"},
+    "selected_backend": {"type": "string"},
+    "committed_run": {"type": "object"},
+    "claim_boundary": {"type": "string"}
+  }
+}

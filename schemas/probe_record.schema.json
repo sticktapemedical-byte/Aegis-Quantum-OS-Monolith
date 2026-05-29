@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AEGIS Probe Record",
+  "type": "object",
+  "required": ["backend", "shots", "q_conf", "qom_compact_payload_hex", "merkle_root"],
+  "properties": {
+    "backend": {"type": "string"},
+    "shots": {"type": "integer", "minimum": 0},
+    "ghz_population": {"type": "number", "minimum": 0, "maximum": 1},
+    "q_conf": {"type": "number", "minimum": 0, "maximum": 1},
+    "selector_score": {"type": "number"},
+    "qom_compact_payload_hex": {"type": "string"},
+    "merkle_root": {"type": "string"}
+  }
+}

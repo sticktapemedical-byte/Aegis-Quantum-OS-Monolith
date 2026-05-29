@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="10" y="25" font-size="11">ibm_bridge_result.json</text>
+<rect x="330" y="15" width="471" height="12" fill="#2563eb"/>
+<text x="840" y="25" font-size="11">0.942 #########.</text>
+<text x="10" y="51" font-size="11">ibm_depth_stress_comparison.json</text>
+<rect x="330" y="41" width="0" height="12" fill="#2563eb"/>
+<text x="840" y="51" font-size="11">0.000 ..........</text>
+<text x="10" y="77" font-size="11">ibm_fast_coherence_marrakesh.json</text>
+<rect x="330" y="67" width="0" height="12" fill="#2563eb"/>
+<text x="840" y="77" font-size="11">0.000 ..........</text>
+<text x="10" y="103" font-size="11">ibm_fez_256.json</text>
+<rect x="330" y="93" width="417" height="12" fill="#2563eb"/>
+<text x="840" y="103" font-size="11">0.836 ########..</text>
+<text x="10" y="129" font-size="11">ibm_kingston_256.json</text>
+<rect x="330" y="119" width="462" height="12" fill="#2563eb"/>
+<text x="840" y="129" font-size="11">0.926 #########.</text>
+<text x="10" y="155" font-size="11">ibm_long_form_marrakesh.json</text>
+<rect x="330" y="145" width="0" height="12" fill="#2563eb"/>
+<text x="840" y="155" font-size="11">0.000 ..........</text>
+<text x="10" y="181" font-size="11">ibm_long_form_marrakesh_setpoint.json</text>
+<rect x="330" y="171" width="0" height="12" fill="#2563eb"/>
+<text x="840" y="181" font-size="11">0.000 ..........</text>
+<text x="10" y="207" font-size="11">ibm_long_form_marrakesh_setpoint_1024.json</text>
+<rect x="330" y="197" width="0" height="12" fill="#2563eb"/>
+<text x="840" y="207" font-size="11">0.000 ..........</text>
+<text x="10" y="233" font-size="11">ibm_long_form_marrakesh_setpoint_256.json</text>
+<rect x="330" y="223" width="0" height="12" fill="#2563eb"/>
+<text x="840" y="233" font-size="11">0.000 ..........</text>
+<text x="10" y="259" font-size="11">ibm_marrakesh_128_delay.json</text>
+<rect x="330" y="249" width="476" height="12" fill="#2563eb"/>
+<text x="840" y="259" font-size="11">0.953 ##########</text>
+<text x="10" y="285" font-size="11">ibm_marrakesh_4096_ghz.json</text>
+<rect x="330" y="275" width="475" height="12" fill="#2563eb"/>
+<text x="840" y="285" font-size="11">0.952 ##########</text>
+<text x="10" y="311" font-size="11">ibm_marrakesh_512.json</text>
+<rect x="330" y="301" width="480" height="12" fill="#2563eb"/>
+<text x="840" y="311" font-size="11">0.961 ##########</text>
+<text x="10" y="337" font-size="11">ibm_readout_mitigation_comparison.json</text>
+<rect x="330" y="327" width="477" height="12" fill="#2563eb"/>
+<text x="840" y="337" font-size="11">0.954 ##########</text>
+<text x="10" y="363" font-size="11">ibm_session_batch_loop_fake_smoke.json</text>
+<rect x="330" y="353" width="0" height="12" fill="#2563eb"/>
+<text x="840" y="363" font-size="11">0.000 ..........</text>
+<text x="10" y="389" font-size="11">ibm_vqe_bridge.json</text>
+<rect x="330" y="379" width="0" height="12" fill="#2563eb"/>
+<text x="840" y="389" font-size="11">0.000 ..........</text>
+<text x="10" y="415" font-size="11">ibm_vqe_bridge_setpoint.json</text>
+<rect x="330" y="405" width="0" height="12" fill="#2563eb"/>
+<text x="840" y="415" font-size="11">0.000 ..........</text>
+</svg>

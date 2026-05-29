@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from aegis_efficiency import summarize_efficiency, summary_to_dict
 from aegis_stats import mean, resource_cost_per_accepted_result
 
 
@@ -32,6 +33,7 @@ def main() -> None:
         "accepted_artifact_count": len(accepted),
         "shots_per_accepted_artifact": resource_cost_per_accepted_result(total_shots, len(accepted)),
         "mean_accepted_ghz": mean(item["ghz_population"] for item in accepted if "ghz_population" in item),
+        "standard_efficiency": summary_to_dict(summarize_efficiency(artifacts)),
         "claim_boundary": "Resource accounting over validation artifacts; not refrigerator power measurement.",
     }
     args.output.write_text(json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8")

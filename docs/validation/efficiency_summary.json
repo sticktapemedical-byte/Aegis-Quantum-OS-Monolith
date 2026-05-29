@@ -5,5 +5,15 @@
   "mean_accepted_ghz": 0.946826171875,
   "shots_per_accepted_artifact": 1732.2666666666667,
   "source": "aegis_efficiency_summary",
+  "standard_efficiency": {
+    "accepted_results": 15,
+    "jobs_per_accepted_result": 1.0666666666666667,
+    "mean_accepted_quality": 0.37921549479166666,
+    "rerun_count": 1,
+    "rerun_rate": 0.0625,
+    "shots_per_accepted_result": 1732.2666666666667,
+    "total_jobs": 16,
+    "total_shots": 25984
+  },
   "total_tracked_shots": 25984
 }

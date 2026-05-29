@@ -222,7 +222,11 @@ If Qiskit is not installed, install the optional integration packages in a separ
 - `docs/validation/raw_counts_sanitized/`: sanitized IBM result artifacts. These include count histograms and derived metrics, but exclude tokens, account identifiers, and local paths.
 - `docs/validation/threshold_freeze.json`: frozen public validation thresholds used to avoid post-hoc tuning accusations.
 - `docs/validation/efficiency_summary.json`: resource-efficiency rollup over sanitized validation artifacts.
+- `docs/validation/blind_holdout.json`: deterministic train/holdout split over sanitized artifacts.
+- `docs/validation/ablation_workflow.json`: ablation comparison over raw-only, no-anchor, no-lineage, and full-AEGIS modes.
+- `docs/validation/reports/`: generated CSV, Markdown, and SVG validation report artifacts.
 - `docs/adaptive_validation_plan.md`: current implementation checklist and ready-to-run IBM backend validation commands.
+- `docs/publication_checklist.md`: claim-safe checklist for public reports and submissions.
 - `schemas/`: lightweight schema descriptors for validation artifacts, `.QOM` records, and threshold-freeze files.
 - `circuits/`: exact circuit specifications for GHZ, phase setpoint, VQE-style toy H2, and depth-stress workloads.
 - `.github/FUNDING.yml`: external support link configuration.
@@ -234,7 +238,14 @@ If Qiskit is not installed, install the optional integration packages in a separ
 - `examples/accepted_vs_rejected.py`: compares accepted, rejected, and all returned batch quality.
 - `examples/delay_ramp.py`: runs a configurable idle-delay GHZ ramp to observe degradation detection.
 - `examples/readout_mitigation_repeat.py`: repeats raw-vs-basic-readout-mitigation comparisons.
+- `examples/adaptive_probe_then_commit.py`: probes candidates and sends a later committed workload to the selected path.
 - `examples/adaptive_backend_selector.py`: probes candidate IBM backends and commits to the highest AEGIS score.
+- `examples/adaptive_layout_selector.py`: ranks candidate qubit-chain layouts and can commit a selected workload.
+- `examples/adaptive_mitigation_selector.py`: selects raw vs readout-mitigated policy based on uplift and overhead.
+- `examples/adaptive_coherence_controller.py`: fits effective delay-ramp survival and selects a coherence-sensitive policy arm.
+- `examples/blind_holdout.py`: creates deterministic blind train/holdout artifact splits.
+- `examples/ablation_workflow.py`: compares partial AEGIS modes over validation artifacts.
+- `examples/generate_validation_report.py`: generates CSV, Markdown, and SVG report assets.
 - `examples/efficiency_report.py`: produces resource-efficiency summaries from the sanitized validation vault.
 - `tests/test_kernel.py`: pytest-compatible regression suite for crypto sealing, holdover aborts, and wrapped-delta phase continuity.
 - `tests/test_validation_artifacts.py`: validates Wilson confidence intervals, threshold-freeze fields, sanitized manifest hashes, and `.QOM` artifact structure.

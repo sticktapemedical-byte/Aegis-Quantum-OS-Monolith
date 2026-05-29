@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AEGIS Efficiency Result",
+  "type": "object",
+  "required": ["source", "claim_boundary"],
+  "properties": {
+    "source": {"type": "string"},
+    "total_shots": {"type": "integer"},
+    "accepted_artifact_count": {"type": "integer"},
+    "shots_per_accepted_artifact": {"type": "number"},
+    "rerun_rate": {"type": "number"},
+    "claim_boundary": {"type": "string"}
+  }
+}

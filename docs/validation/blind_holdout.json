@@ -1,0 +1,47 @@
+{
+  "claim_boundary": "Prevents post-hoc threshold tuning; not a new hardware result.",
+  "holdout_artifacts": [
+    "ibm_bridge_result.json",
+    "ibm_depth_stress_comparison.json",
+    "ibm_fast_coherence_marrakesh.json",
+    "ibm_long_form_marrakesh_setpoint.json",
+    "ibm_marrakesh_128_delay.json",
+    "ibm_marrakesh_4096_ghz.json",
+    "ibm_marrakesh_512.json",
+    "ibm_vqe_bridge_setpoint.json"
+  ],
+  "holdout_count": 8,
+  "holdout_efficiency": {
+    "accepted_results": 8,
+    "jobs_per_accepted_result": 1.0,
+    "mean_accepted_quality": 0.476043701171875,
+    "rerun_count": 0,
+    "rerun_rate": 0.0,
+    "shots_per_accepted_result": 1408.0,
+    "total_jobs": 8,
+    "total_shots": 11264
+  },
+  "holdout_fraction": 0.3,
+  "source": "aegis_blind_holdout_workflow",
+  "train_artifacts": [
+    "ibm_fez_256.json",
+    "ibm_kingston_256.json",
+    "ibm_long_form_marrakesh.json",
+    "ibm_long_form_marrakesh_setpoint_1024.json",
+    "ibm_long_form_marrakesh_setpoint_256.json",
+    "ibm_readout_mitigation_comparison.json",
+    "ibm_session_batch_loop_fake_smoke.json",
+    "ibm_vqe_bridge.json"
+  ],
+  "train_count": 8,
+  "train_efficiency": {
+    "accepted_results": 7,
+    "jobs_per_accepted_result": 1.1428571428571428,
+    "mean_accepted_quality": 0.2685546875,
+    "rerun_count": 1,
+    "rerun_rate": 0.125,
+    "shots_per_accepted_result": 2102.8571428571427,
+    "total_jobs": 8,
+    "total_shots": 14720
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "artifact_sha256": "df0a9adacfb98c47e63d4b857b09989afd29c1e52d8d3890263e4907dbecacb8",
+  "backend": null,
+  "created_utc": "2026-05-29T14:26:59.949226+00:00",
+  "job_id": null,
+  "merkle_root": null,
+  "qom_compact_payload_bits": null,
+  "qom_compact_payload_hex": null,
+  "round_trip_seconds": null,
+  "shots": null,
+  "source": "aegis_ibm_maintenance_blocked_campaign",
+  "source_file": "ibm_maintenance_blocked_campaign.json",
+  "status": "real_backend_campaign_blocked"
+}

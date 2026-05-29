@@ -6,6 +6,7 @@ adaptive_layout_selector.json,ibm_marrakesh,1024,0.9423828125,,,d8cl2ib8ch0s738v
 adaptive_mitigation_selector.json,ibm_marrakesh,3072,0.951171875,,,d8cl3cj8amns73bjn5vg,176,42772cfe6f913c4caa2c5e68bb1a341ad1661fdb22cb4789c82db15d2b59be0d
 adaptive_probe_then_commit.json,ibm_marrakesh,1024,0.9501953125,,,d8cl0os7avuc73dr5i40,176,fd2dbbcef84b0f40b458ba11450aea8972eae2d4b36db19a6d2bd064604ca994
 calibration_campaign.json,ibm_marrakesh,,,,real_calibration_campaign_not_queued_by_default,,,
+dd_repeat_campaign.json,ibm_marrakesh,,,,,,,
 delay_ramp.json,ibm_marrakesh,,,,,,176,73421513bc062d21f13114c9247f962c5f2c046523c15e53746e4c99846bd89c
 dynamic_circuit_governance.json,ibm_marrakesh,256,,,real_job_complete,d8cl4lj8ch0s738v1ql0,,
 dynamical_decoupling_insertion.json,ibm_marrakesh,512,0.701171875,,,d8cl4a47avuc73dr5mq0,176,6b90e9d943955ce4a44c60f17d8fde7cfab14c680f225f16dd6c22d7d9e24b4d
@@ -18,6 +19,7 @@ ibm_long_form_marrakesh.json,ibm_marrakesh,1280,,,,d8cfc8ijki0s73ar6ri0,176,37e8
 ibm_long_form_marrakesh_setpoint.json,ibm_marrakesh,640,,,,d8cfd4ijki0s73ar6tkg,176,29ba85ea53bf9b598e0915c8184b033b4a1019a9a8f71713fc25998637342ddd
 ibm_long_form_marrakesh_setpoint_1024.json,ibm_marrakesh,5120,,,,d8cfk538amns73bjg5gg,176,b4b7e446bbed70a2c0042d30c9930d753c8b1b5b1c7ac10dc0c244ae9a8e50ef
 ibm_long_form_marrakesh_setpoint_256.json,ibm_marrakesh,1280,,,,d8cfdvqjki0s73ar6uog,176,5a23a687e1c0aa34cf6aaca071ddd380e0f9170019edb96920cd90ef42a8c53b
+ibm_maintenance_blocked_campaign.json,,,,,real_backend_campaign_blocked,,,
 ibm_marrakesh_128_delay.json,ibm_marrakesh,128,0.953125,,,d8cf7n47avuc73dqtus0,176,d83df2ef636d7619a9f4c329d73cabda20a03ae3515905a41ce3cffe2b2e6288
 ibm_marrakesh_4096_ghz.json,ibm_marrakesh,4096,0.951904296875,,,d8cfjoijki0s73ar75bg,176,a2251c409337c5f91ddb9f9eab6153243e598a376d1455a24f45758460505972
 ibm_marrakesh_512.json,ibm_marrakesh,512,0.9609375,,,d8cf7cj8ch0s738uq3qg,176,e939a8f6e598c31237ae81546e2300c45f2d400379fa3e5ae6525373632b33cc
@@ -25,5 +27,7 @@ ibm_readout_mitigation_comparison.json,ibm_marrakesh,3072,0.9541015625,,,d8cfma2
 ibm_session_batch_loop_fake_smoke.json,fake_osaka,384,,,,,176,868954883da8f07c1e1de2f9da8ec616330aba4b0209b5ce8bee44da0b1219f3
 ibm_vqe_bridge.json,ibm_marrakesh,3072,,,,d8cfmgs7avuc73dqumgg,176,cb411471d3ff818125b84090aa1d8dfc541237e04b275b4602af84ea7161e1c4
 ibm_vqe_bridge_setpoint.json,ibm_marrakesh,3072,,,,d8cfn0qjki0s73ar7990,176,17ae7c6abc5aa96a361477e63980b5dcd0cff0f48cadeef05683be9845d8bad1
+negative_regression_suite.json,,64,,,,,176,d91dc1b564d3d065334107b0986f43256556300335f79f67746203655358052b
 pulse_level_controls.json,,,,,,,,
+qaoa_bridge.json,ibm_marrakesh,64,,,,,176,ad11506b92d8e52ccbd01ec5abaa06b86bb54136ed9cfd2c36f3be0119a75ce6
 readout_mitigation_repeat.json,ibm_marrakesh,30720,,,,,176,fc3e834be29708baba2f94de2253b8aa11d4af25544c6009cebcd9fb92f84631

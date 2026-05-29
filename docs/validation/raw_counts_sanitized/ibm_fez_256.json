@@ -1,5 +1,5 @@
 {
-  "artifact_sha256": "e3f0e7eeeba123c7fa06e9768a3d0ff4bbe3fc4d92d2337e6d1a8d9b55f171c6",
+  "artifact_sha256": "f2d59a782abfdc66945d570c66f299288ebca13dc8b58eca3fb6c21147ab0553",
   "backend": "ibm_fez",
   "counts": {
     "0000": 109,
@@ -13,7 +13,7 @@
     "1110": 6,
     "1111": 105
   },
-  "created_utc": "2026-05-29T14:16:12.276732+00:00",
+  "created_utc": "2026-05-29T14:26:59.949226+00:00",
   "ghz_population": 0.8359375,
   "ghz_population_wilson_95": {
     "high": 0.8762723987504079,

@@ -1,12 +1,66 @@
 {
-  "artifact_sha256": "a4b67669b431711b5c3c29f5ed637d55d6d1d7a0ccb4a7adc47f5374076008b0",
+  "artifact_sha256": "f2645daf9a0b366289eb268c19f45ca141d7faf4c9cff6bff97dc49c58cad018",
   "backend": "ibm_marrakesh",
   "created_utc": "2026-05-29T14:26:59.949226+00:00",
   "job_id": null,
-  "merkle_root": "fc3e834be29708baba2f94de2253b8aa11d4af25544c6009cebcd9fb92f84631",
-  "qom_compact_payload_bits": 176,
-  "qom_compact_payload_hex": "951db4c6f5d200012d121c9600000779d38b7966e800",
+  "merkle_root": null,
+  "qom_compact_payload_bits": null,
+  "qom_compact_payload_hex": null,
   "records_summary": [
+    {
+      "batch": null,
+      "continuity_gate_passed": null,
+      "depth_layers": null,
+      "ghz_population": null,
+      "governance_states": null,
+      "q_conf": null,
+      "theta": null
+    },
+    {
+      "batch": null,
+      "continuity_gate_passed": null,
+      "depth_layers": null,
+      "ghz_population": null,
+      "governance_states": null,
+      "q_conf": null,
+      "theta": null
+    },
+    {
+      "batch": null,
+      "continuity_gate_passed": null,
+      "depth_layers": null,
+      "ghz_population": null,
+      "governance_states": null,
+      "q_conf": null,
+      "theta": null
+    },
+    {
+      "batch": null,
+      "continuity_gate_passed": null,
+      "depth_layers": null,
+      "ghz_population": null,
+      "governance_states": null,
+      "q_conf": null,
+      "theta": null
+    },
+    {
+      "batch": null,
+      "continuity_gate_passed": null,
+      "depth_layers": null,
+      "ghz_population": null,
+      "governance_states": null,
+      "q_conf": null,
+      "theta": null
+    },
+    {
+      "batch": null,
+      "continuity_gate_passed": null,
+      "depth_layers": null,
+      "ghz_population": null,
+      "governance_states": null,
+      "q_conf": null,
+      "theta": null
+    },
     {
       "batch": null,
       "continuity_gate_passed": null,
@@ -99,7 +153,8 @@
     }
   ],
   "round_trip_seconds": null,
-  "shots": 30720,
-  "source": "aegis_readout_mitigation_repeat",
-  "source_file": "readout_mitigation_repeat.json"
+  "selected_sequence": "xy4",
+  "shots": null,
+  "source": "aegis_dd_repeat_campaign",
+  "source_file": "dd_repeat_campaign.json"
 }

@@ -1,11 +1,11 @@
 {
-  "artifact_sha256": "f0daee89d3f370a5c35960e78434b7bc15e048db015f58bcb8cbcfa727663b96",
+  "artifact_sha256": "a5a2af23c032bd78dd5b651507c59af6b723b2b917262c0d81718643aa250ff4",
   "backend": "ibm_marrakesh",
   "counts": {
     "00": 118,
     "11": 138
   },
-  "created_utc": "2026-05-29T14:16:12.276732+00:00",
+  "created_utc": "2026-05-29T14:26:59.949226+00:00",
   "job_id": "d8cl4lj8ch0s738v1ql0",
   "merkle_root": null,
   "qom_compact_payload_bits": null,

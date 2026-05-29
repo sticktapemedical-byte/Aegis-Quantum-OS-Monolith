@@ -30,10 +30,10 @@ The current utility accepts records that satisfy available quality and lineage f
 
 From `docs/validation/efficiency_summary.json`:
 
-- artifacts: `28`,
-- tracked shots: `71,296`,
-- accepted artifacts: `23`,
-- rerun rate: `17.86%`,
-- shots per accepted artifact: `3,099.83`.
+- artifacts: `32`,
+- tracked shots: `71,424`,
+- accepted artifacts: `25`,
+- rerun rate: `21.88%`,
+- shots per accepted artifact: `2,856.96`.
 
 These figures mix heterogeneous validation artifacts and should be interpreted as artifact accounting, not as a single homogeneous QPU benchmark.

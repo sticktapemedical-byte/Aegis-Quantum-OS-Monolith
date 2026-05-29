@@ -69,8 +69,8 @@ The latest campaign report is here:
 
 Current public-safe validation vault:
 
-- Sanitized artifacts represented: `28`
-- Total tracked shots in sanitized summaries: `71,296`
+- Sanitized artifacts represented: `32`
+- Total tracked shots in sanitized summaries: `71,424`
 - Tests passing locally: `28`
 - `.QOM` compact payload width: `176 bits`
 
@@ -82,6 +82,7 @@ Campaign highlights:
 - DD-style idle echo harness: selected `xy4`; survival `70.12%` vs no-DD-style arm `33.59%` in one workload/run; repeat testing is still required.
 - Dynamic-circuit governance: real `ibm_marrakesh` dynamic-circuit job completed.
 - Negative/inconclusive results are preserved: delay-ramp monotonic degradation was not observed, and the coherence-controller delay fit did not expose a decay curve.
+- IBM maintenance/availability block is recorded separately so unavailable real-backend campaigns are not treated as failed AEGIS results.
 
 These are returned-output and workload-selection results, not claims of changing the hardware physics.
 

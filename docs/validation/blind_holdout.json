@@ -32,6 +32,7 @@
     "adaptive_mitigation_selector.json",
     "adaptive_probe_then_commit.json",
     "calibration_campaign.json",
+    "dd_repeat_campaign.json",
     "delay_ramp.json",
     "dynamic_circuit_governance.json",
     "dynamical_decoupling_insertion.json",
@@ -40,20 +41,23 @@
     "ibm_long_form_marrakesh.json",
     "ibm_long_form_marrakesh_setpoint_1024.json",
     "ibm_long_form_marrakesh_setpoint_256.json",
+    "ibm_maintenance_blocked_campaign.json",
     "ibm_readout_mitigation_comparison.json",
     "ibm_session_batch_loop_fake_smoke.json",
     "ibm_vqe_bridge.json",
+    "negative_regression_suite.json",
+    "qaoa_bridge.json",
     "readout_mitigation_repeat.json"
   ],
-  "train_count": 18,
+  "train_count": 22,
   "train_efficiency": {
-    "accepted_results": 14,
-    "jobs_per_accepted_result": 1.2857142857142858,
-    "mean_accepted_quality": 0.40576171875,
-    "rerun_count": 4,
-    "rerun_rate": 0.2222222222222222,
-    "shots_per_accepted_result": 3739.4285714285716,
-    "total_jobs": 18,
-    "total_shots": 52352
+    "accepted_results": 16,
+    "jobs_per_accepted_result": 1.375,
+    "mean_accepted_quality": 0.35504150390625,
+    "rerun_count": 6,
+    "rerun_rate": 0.2727272727272727,
+    "shots_per_accepted_result": 3280.0,
+    "total_jobs": 22,
+    "total_shots": 52480
   }
 }

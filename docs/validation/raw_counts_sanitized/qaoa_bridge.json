@@ -1,59 +1,61 @@
 {
-  "artifact_sha256": "0794a3a6e9a6babff5b35cd6fed882ff4991aa43f263a28ec73b6f7766621f65",
+  "artifact_sha256": "6e27b3ca2cf76ef10585210b0befa847dfe537884e963e023dac6d45418d6253",
   "backend": "ibm_marrakesh",
   "created_utc": "2026-05-29T14:26:59.949226+00:00",
   "job_id": null,
-  "merkle_root": "73421513bc062d21f13114c9247f962c5f2c046523c15e53746e4c99846bd89c",
+  "merkle_root": "ad11506b92d8e52ccbd01ec5abaa06b86bb54136ed9cfd2c36f3be0119a75ce6",
+  "qaoa_best_state_population": 0.9375,
+  "qaoa_expected_cut": 1.875,
   "qom_compact_payload_bits": 176,
-  "qom_compact_payload_hex": "83a6d455f93200012f3511ce0000a0bdacc69df5f803",
+  "qom_compact_payload_hex": "8da52256f80800012f49116900001aa8e80bcdc3791d",
   "records_summary": [
     {
       "batch": null,
       "continuity_gate_passed": true,
       "depth_layers": null,
-      "ghz_population": 0.9462890625,
+      "ghz_population": null,
       "governance_states": [
         "NORMAL"
       ],
-      "q_conf": 0.9601066804784653,
+      "q_conf": 0.9705462635752599,
       "theta": null
     },
     {
       "batch": null,
       "continuity_gate_passed": true,
       "depth_layers": null,
-      "ghz_population": 0.9677734375,
+      "ghz_population": null,
       "governance_states": [
         "NORMAL"
       ],
-      "q_conf": 0.9736569732264916,
+      "q_conf": 0.9688961589761597,
       "theta": null
     },
     {
       "batch": null,
       "continuity_gate_passed": true,
       "depth_layers": null,
-      "ghz_population": 0.97265625,
+      "ghz_population": null,
       "governance_states": [
         "NORMAL"
       ],
-      "q_conf": 0.9740918053970012,
+      "q_conf": 0.9672288893947476,
       "theta": null
     },
     {
       "batch": null,
       "continuity_gate_passed": true,
       "depth_layers": null,
-      "ghz_population": 0.9736328125,
+      "ghz_population": null,
       "governance_states": [
         "NORMAL"
       ],
-      "q_conf": 0.9734418511781385,
+      "q_conf": 0.966235095577644,
       "theta": null
     }
   ],
   "round_trip_seconds": null,
-  "shots": null,
-  "source": "aegis_delay_ramp_degradation_detection",
-  "source_file": "delay_ramp.json"
+  "shots": 64,
+  "source": "aegis_qaoa_bridge",
+  "source_file": "qaoa_bridge.json"
 }

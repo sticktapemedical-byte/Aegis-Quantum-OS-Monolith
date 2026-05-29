@@ -9,6 +9,7 @@
 | adaptive_mitigation_selector.json | ibm_marrakesh | d8cl3cj8amns73... | 3072 | 0.951171875 |  |  | 176 | 42772cfe6f91... |
 | adaptive_probe_then_commit.json | ibm_marrakesh | d8cl0os7avuc73... | 1024 | 0.9501953125 |  |  | 176 | fd2dbbcef84b... |
 | calibration_campaign.json | ibm_marrakesh |  |  |  |  | real_calibration_campaign_not_queued_by_default |  |  |
+| dd_repeat_campaign.json | ibm_marrakesh |  |  |  |  |  |  |  |
 | delay_ramp.json | ibm_marrakesh |  |  |  |  |  | 176 | 73421513bc06... |
 | dynamic_circuit_governance.json | ibm_marrakesh | d8cl4lj8ch0s73... | 256 |  |  | real_job_complete |  |  |
 | dynamical_decoupling_insertion.json | ibm_marrakesh | d8cl4a47avuc73... | 512 | 0.701171875 |  |  | 176 | 6b90e9d94395... |
@@ -21,6 +22,7 @@
 | ibm_long_form_marrakesh_setpoint.json | ibm_marrakesh | d8cfd4ijki0s73... | 640 |  |  |  | 176 | 29ba85ea53bf... |
 | ibm_long_form_marrakesh_setpoint_1024.json | ibm_marrakesh | d8cfk538amns73... | 5120 |  |  |  | 176 | b4b7e446bbed... |
 | ibm_long_form_marrakesh_setpoint_256.json | ibm_marrakesh | d8cfdvqjki0s73... | 1280 |  |  |  | 176 | 5a23a687e1c0... |
+| ibm_maintenance_blocked_campaign.json |  |  |  |  |  | real_backend_campaign_blocked |  |  |
 | ibm_marrakesh_128_delay.json | ibm_marrakesh | d8cf7n47avuc73... | 128 | 0.953125 |  |  | 176 | d83df2ef636d... |
 | ibm_marrakesh_4096_ghz.json | ibm_marrakesh | d8cfjoijki0s73... | 4096 | 0.951904296875 |  |  | 176 | a2251c409337... |
 | ibm_marrakesh_512.json | ibm_marrakesh | d8cf7cj8ch0s73... | 512 | 0.9609375 |  |  | 176 | e939a8f6e598... |
@@ -28,5 +30,7 @@
 | ibm_session_batch_loop_fake_smoke.json | fake_osaka |  | 384 |  |  |  | 176 | 868954883da8... |
 | ibm_vqe_bridge.json | ibm_marrakesh | d8cfmgs7avuc73... | 3072 |  |  |  | 176 | cb411471d3ff... |
 | ibm_vqe_bridge_setpoint.json | ibm_marrakesh | d8cfn0qjki0s73... | 3072 |  |  |  | 176 | 17ae7c6abc5a... |
+| negative_regression_suite.json |  |  | 64 |  |  |  | 176 | d91dc1b564d3... |
 | pulse_level_controls.json |  |  |  |  |  |  |  |  |
+| qaoa_bridge.json | ibm_marrakesh |  | 64 |  |  |  | 176 | ad11506b92d8... |
 | readout_mitigation_repeat.json | ibm_marrakesh |  | 30720 |  |  |  | 176 | fc3e834be297... |

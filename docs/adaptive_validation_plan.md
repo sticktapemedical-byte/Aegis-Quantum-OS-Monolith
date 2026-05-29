@@ -24,9 +24,12 @@ This document maps the QPU upgrade plan to the current repository state. The cla
 | Adaptive mitigation selector | `examples/adaptive_mitigation_selector.py` compares raw vs readout-mitigated quality and selects a later policy. |
 | Adaptive coherence controller | `examples/adaptive_coherence_controller.py` fits effective delay-ramp survival and selects the best policy arm in synthetic mode or real delay-ramp mode. |
 | Dynamical decoupling insertion harness | `examples/dynamical_decoupling_insertion.py` builds idle-window echo/DD-style arms and runs synthetic by default or real if backend/API support allows. |
+| DD repeat campaign | `examples/dd_repeat_campaign.py` repeats DD-style arms across delay values; real backend run queued for IBM availability. |
 | Dynamic-circuit governance harness | `examples/dynamic_circuit_governance.py` builds a small mid-circuit measurement/feed-forward template and reports unsupported cleanly when unavailable. |
 | RB/T1/T2/tomography campaign harness | `examples/calibration_campaign.py` produces synthetic calibration proxies and reserves `--real` for a dedicated calibrated hardware campaign. |
 | Pulse-level control policy registers | `examples/pulse_level_controls.py` records Omega-drive, ZNE lambda, eta-eff, and thermal-headroom policy decisions without claiming public-backend pulse access. |
+| QAOA bridge | `examples/qaoa_bridge.py` runs a small MaxCut/QAOA-style workload through AEGIS governance; real backend run queued for IBM availability. |
+| Negative regression suite | `examples/negative_regression_suite.py` preserves low-quality, blocked, and failed outputs across backends as regression evidence. |
 | Resource efficiency summary | `examples/efficiency_report.py` summarizes shots per accepted artifact from the sanitized vault. |
 | Efficiency utilities | `aegis_efficiency.py` computes accepted results, rerun rate, and shots/jobs per accepted result. |
 | Blind holdout workflow | `examples/blind_holdout.py` creates deterministic train/holdout splits over sanitized artifacts. |
@@ -48,7 +51,10 @@ python examples/adaptive_layout_selector.py --real --backend ibm_marrakesh --pro
 python examples/adaptive_mitigation_selector.py --real --backend ibm_marrakesh --ghz-shots 1024 --calibration-shots 256 --output adaptive_mitigation_selector.json
 python examples/adaptive_coherence_controller.py --real --backend ibm_marrakesh --shots 512 --delays-ms 0,1,2,5 --output adaptive_coherence_controller.json
 python examples/dynamical_decoupling_insertion.py --real --backend ibm_marrakesh --shots 512 --delay-us 50 --output dynamical_decoupling_insertion.json
+python examples/dd_repeat_campaign.py --real --backend ibm_marrakesh --repeats 10 --shots 128 --delays-us 25,50,100 --output dd_repeat_campaign.json
 python examples/dynamic_circuit_governance.py --real --backend ibm_marrakesh --shots 256 --output dynamic_circuit_governance.json
+python examples/qaoa_bridge.py --real --backend ibm_marrakesh --shots 512 --output qaoa_bridge.json
+python examples/negative_regression_suite.py --real --backends ibm_marrakesh,ibm_kingston,ibm_fez --shots 128 --delays-ms 0,5,10 --output negative_regression_suite.json
 python examples/efficiency_report.py --output docs/validation/efficiency_summary.json
 python examples/blind_holdout.py --output docs/validation/blind_holdout.json
 python examples/ablation_workflow.py --output docs/validation/ablation_workflow.json

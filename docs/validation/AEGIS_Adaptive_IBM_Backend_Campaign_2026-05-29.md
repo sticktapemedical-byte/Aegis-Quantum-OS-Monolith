@@ -34,6 +34,7 @@ This campaign measures returned-output governance, adaptive workload selection, 
 - The strongest positive results from this campaign are the accepted-vs-rejected split, readout mitigation repeat uplift, backend selection favoring `ibm_marrakesh`, dynamic-circuit execution, and DD-style idle echo arm comparison.
 - The DD-style result is a single workload/run comparison. It supports that the harness can compare control-policy candidates, not that AEGIS improves intrinsic coherence.
 - The ablation workflow now separates raw target quality from governed software score so raw-only and full-AEGIS modes are not compared through one overloaded metric.
+- The follow-up DD repeat, QAOA bridge, and negative-regression wrappers were added after this campaign. Real IBM execution is currently recorded as blocked by IBM Cloud/QPU availability in `AEGIS_IBM_Maintenance_Blocked_Campaign_2026-05-29.md`.
 
 ## Most Defensible Public Claim
 
@@ -43,10 +44,10 @@ AEGIS demonstrated real IBM Cloud QPU returned-output governance with accepted-o
 
 After regenerating sanitized artifacts, the validation vault contains:
 
-- Sanitized artifacts represented: `28`
-- Total tracked shots in sanitized summaries: `71,296`
-- Accepted artifacts: `23`
-- Shots per accepted artifact: `3,099.83`
+- Sanitized artifacts represented: `32`
+- Total tracked shots in sanitized summaries: `71,424`
+- Accepted artifacts: `25`
+- Shots per accepted artifact: `2,856.96`
 - Holdout artifacts: `10`
 - Train artifacts: `18`
 

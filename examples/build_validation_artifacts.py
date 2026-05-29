@@ -45,6 +45,10 @@ SOURCE_FILES = [
     "dynamic_circuit_governance.json",
     "calibration_campaign.json",
     "pulse_level_controls.json",
+    "dd_repeat_campaign.json",
+    "qaoa_bridge.json",
+    "negative_regression_suite.json",
+    "ibm_maintenance_blocked_campaign.json",
 ]
 
 
@@ -72,16 +76,17 @@ def sanitize_payload(source_name: str, payload: dict[str, Any]) -> dict[str, Any
     final_record = payload.get("records", [{}])[-1] if payload.get("records") else {}
     committed = payload.get("committed_run") or {}
     comparison = payload.get("comparison") or {}
+    best = payload.get("best") or {}
     sanitized: dict[str, Any] = {
         "source_file": source_name,
         "source": payload.get("source"),
-        "backend": payload.get("backend") or committed.get("backend") or comparison.get("backend"),
-        "job_id": payload.get("job_id") or committed.get("job_id") or comparison.get("job_id"),
-        "shots": payload.get("shots") or payload.get("total_shots") or payload.get("ghz_shots") or committed.get("shots") or comparison.get("total_shots") or comparison.get("ghz_shots"),
-        "round_trip_seconds": payload.get("round_trip_seconds") or committed.get("round_trip_seconds") or comparison.get("round_trip_seconds"),
-        "qom_compact_payload_bits": payload.get("qom_compact_payload_bits") or payload.get("final_qom_compact_payload_bits") or committed.get("qom_compact_payload_bits") or comparison.get("qom_compact_payload_bits") or final_record.get("qom_compact_payload_bits"),
-        "qom_compact_payload_hex": payload.get("qom_compact_payload_hex") or payload.get("final_qom_compact_payload_hex") or committed.get("qom_compact_payload_hex") or comparison.get("qom_compact_payload_hex") or final_record.get("qom_compact_payload_hex"),
-        "merkle_root": payload.get("merkle_root") or payload.get("final_merkle_root") or committed.get("merkle_root") or comparison.get("merkle_root") or final_record.get("merkle_root"),
+        "backend": payload.get("backend") or committed.get("backend") or comparison.get("backend") or best.get("backend"),
+        "job_id": payload.get("job_id") or committed.get("job_id") or comparison.get("job_id") or best.get("job_id"),
+        "shots": payload.get("shots") or payload.get("total_shots") or payload.get("ghz_shots") or committed.get("shots") or comparison.get("total_shots") or comparison.get("ghz_shots") or best.get("shots"),
+        "round_trip_seconds": payload.get("round_trip_seconds") or committed.get("round_trip_seconds") or comparison.get("round_trip_seconds") or best.get("round_trip_seconds"),
+        "qom_compact_payload_bits": payload.get("qom_compact_payload_bits") or payload.get("final_qom_compact_payload_bits") or committed.get("qom_compact_payload_bits") or comparison.get("qom_compact_payload_bits") or best.get("qom_compact_payload_bits") or final_record.get("qom_compact_payload_bits"),
+        "qom_compact_payload_hex": payload.get("qom_compact_payload_hex") or payload.get("final_qom_compact_payload_hex") or committed.get("qom_compact_payload_hex") or comparison.get("qom_compact_payload_hex") or best.get("qom_compact_payload_hex") or final_record.get("qom_compact_payload_hex"),
+        "merkle_root": payload.get("merkle_root") or payload.get("final_merkle_root") or committed.get("merkle_root") or comparison.get("merkle_root") or best.get("merkle_root") or final_record.get("merkle_root"),
     }
     if "ghz_population" in committed and "ghz_population" not in payload:
         payload = dict(payload)
@@ -117,6 +122,9 @@ def sanitize_payload(source_name: str, payload: dict[str, Any]) -> dict[str, Any
     if "best_energy" in payload:
         sanitized["best_theta"] = payload["best_theta"]
         sanitized["best_energy"] = payload["best_energy"]
+    if best and "expected_cut" in best:
+        sanitized["qaoa_expected_cut"] = best.get("expected_cut")
+        sanitized["qaoa_best_state_population"] = best.get("best_state_population")
     if "records" in payload:
         sanitized["records_summary"] = [
             {
@@ -189,7 +197,7 @@ def main() -> None:
         path = ROOT / name
         if not path.exists():
             continue
-        payload = json.loads(path.read_text(encoding="utf-8"))
+        payload = json.loads(path.read_text(encoding="utf-8-sig"))
         sanitized = sanitize_payload(name, payload)
         sanitized["created_utc"] = created_utc
         sanitized_bytes = json.dumps(sanitized, indent=2, sort_keys=True).encode("utf-8")

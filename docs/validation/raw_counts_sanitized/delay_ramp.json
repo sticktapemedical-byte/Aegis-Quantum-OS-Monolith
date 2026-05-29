@@ -1,0 +1,59 @@
+{
+  "artifact_sha256": "52a6e8b0ea07323f86b75e06ecfca471005d3cb9282bde0540557326e1f50437",
+  "backend": "ibm_marrakesh",
+  "created_utc": "2026-05-29T08:47:11.385471+00:00",
+  "job_id": null,
+  "merkle_root": "73421513bc062d21f13114c9247f962c5f2c046523c15e53746e4c99846bd89c",
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "83a6d455f93200012f3511ce0000a0bdacc69df5f803",
+  "records_summary": [
+    {
+      "batch": null,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.9462890625,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9601066804784653,
+      "theta": null
+    },
+    {
+      "batch": null,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.9677734375,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9736569732264916,
+      "theta": null
+    },
+    {
+      "batch": null,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.97265625,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9740918053970012,
+      "theta": null
+    },
+    {
+      "batch": null,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.9736328125,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9734418511781385,
+      "theta": null
+    }
+  ],
+  "round_trip_seconds": null,
+  "shots": null,
+  "source": "aegis_delay_ramp_degradation_detection",
+  "source_file": "delay_ramp.json"
+}

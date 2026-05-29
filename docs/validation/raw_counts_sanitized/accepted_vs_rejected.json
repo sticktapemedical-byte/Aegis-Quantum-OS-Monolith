@@ -1,0 +1,396 @@
+{
+  "acceptance_summary": [
+    {
+      "count": 30,
+      "ghz_wilson_95": {
+        "high": 0.9535356835709207,
+        "low": 0.9436717922660526
+      },
+      "governance_states": [
+        "NORMAL"
+      ],
+      "group": "all",
+      "max_ghz": 0.97265625,
+      "mean_ghz": 0.948828125,
+      "min_ghz": 0.921875,
+      "q_conf_mean": 0.9604002209706678,
+      "std_ghz": 0.011485190491220076
+    },
+    {
+      "count": 25,
+      "ghz_wilson_95": {
+        "high": 0.9574452591545654,
+        "low": 0.9470118604110759
+      },
+      "governance_states": [
+        "NORMAL"
+      ],
+      "group": "accepted",
+      "max_ghz": 0.97265625,
+      "mean_ghz": 0.9525,
+      "min_ghz": 0.94140625,
+      "q_conf_mean": 0.9606602362231301,
+      "std_ghz": 0.008184502671780064
+    },
+    {
+      "count": 5,
+      "ghz_wilson_95": {
+        "high": 0.9431536123434223,
+        "low": 0.9152078250666693
+      },
+      "governance_states": [
+        "NORMAL"
+      ],
+      "group": "rejected",
+      "max_ghz": 0.9375,
+      "mean_ghz": 0.93046875,
+      "min_ghz": 0.921875,
+      "q_conf_mean": 0.9591001447083565,
+      "std_ghz": 0.006987712429686843
+    }
+  ],
+  "artifact_sha256": "c51f7efbec564f48334e8a381f421dcd8d9bbb8bb67f31aeb67f834f6b63bb89",
+  "backend": "ibm_marrakesh",
+  "created_utc": "2026-05-29T08:47:11.385471+00:00",
+  "job_id": null,
+  "merkle_root": "d83bd389a0351c308186375214b4b9817f643cf7e332c16d149ba5378d9ea9f7",
+  "qom_compact_payload_bits": 176,
+  "qom_compact_payload_hex": "953c1750f5d100012cfc1d040000c6c501eca2a2d482",
+  "records_summary": [
+    {
+      "batch": 1,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.9375,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9591453763223694,
+      "theta": null
+    },
+    {
+      "batch": 2,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.92578125,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9600966437315308,
+      "theta": null
+    },
+    {
+      "batch": 3,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.9609375,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9604840208142127,
+      "theta": null
+    },
+    {
+      "batch": 4,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.95703125,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9613305545720152,
+      "theta": null
+    },
+    {
+      "batch": 5,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.95703125,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9619501729015923,
+      "theta": null
+    },
+    {
+      "batch": 6,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.921875,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9592518657923611,
+      "theta": null
+    },
+    {
+      "batch": 7,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.94140625,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9597629001312697,
+      "theta": null
+    },
+    {
+      "batch": 8,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.953125,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9615484078749079,
+      "theta": null
+    },
+    {
+      "batch": 9,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.9453125,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.960558134932384,
+      "theta": null
+    },
+    {
+      "batch": 10,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.95703125,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9584041289247976,
+      "theta": null
+    },
+    {
+      "batch": 11,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.95703125,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.960658955863525,
+      "theta": null
+    },
+    {
+      "batch": 12,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.94921875,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9611143697184619,
+      "theta": null
+    },
+    {
+      "batch": 13,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.95703125,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9602148539671859,
+      "theta": null
+    },
+    {
+      "batch": 14,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.94921875,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9623894139007396,
+      "theta": null
+    },
+    {
+      "batch": 15,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.94921875,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9602843667442525,
+      "theta": null
+    },
+    {
+      "batch": 16,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.9375,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9580027731507815,
+      "theta": null
+    },
+    {
+      "batch": 17,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.94140625,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9593598913253588,
+      "theta": null
+    },
+    {
+      "batch": 18,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.95703125,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9605259932660135,
+      "theta": null
+    },
+    {
+      "batch": 19,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.94921875,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9614974106166282,
+      "theta": null
+    },
+    {
+      "batch": 20,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.94921875,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9599845598943991,
+      "theta": null
+    },
+    {
+      "batch": 21,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.94140625,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9606334847686034,
+      "theta": null
+    },
+    {
+      "batch": 22,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.9609375,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9616792441489495,
+      "theta": null
+    },
+    {
+      "batch": 23,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.97265625,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.962667821601225,
+      "theta": null
+    },
+    {
+      "batch": 24,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.94921875,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9595582333776285,
+      "theta": null
+    },
+    {
+      "batch": 25,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.9609375,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9619525439238936,
+      "theta": null
+    },
+    {
+      "batch": 26,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.96484375,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9606857618623413,
+      "theta": null
+    },
+    {
+      "batch": 27,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.94140625,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9579291067920364,
+      "theta": null
+    },
+    {
+      "batch": 28,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.9453125,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9610913451872393,
+      "theta": null
+    },
+    {
+      "batch": 29,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.9296875,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9590040645447396,
+      "theta": null
+    },
+    {
+      "batch": 30,
+      "continuity_gate_passed": true,
+      "depth_layers": null,
+      "ghz_population": 0.9453125,
+      "governance_states": [
+        "NORMAL"
+      ],
+      "q_conf": 0.9602402284685927,
+      "theta": null
+    }
+  ],
+  "round_trip_seconds": 424.3258145,
+  "shots": 7680,
+  "source": "ibm_real_job_batch_loop",
+  "source_file": "accepted_vs_rejected.json",
+  "success_condition_met": true
+}

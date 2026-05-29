@@ -1,0 +1,23 @@
+{
+  "arms_summary": [
+    {
+      "arm": "aegis_selected_delay_ramp",
+      "job_id": null,
+      "selected": true,
+      "sequence": null,
+      "status": null,
+      "survival": null
+    }
+  ],
+  "artifact_sha256": "473927933213429180a5827d21343070d9be9a30f9a66b06793f18cdbd60cbe6",
+  "backend": "ibm_marrakesh",
+  "created_utc": "2026-05-29T08:47:11.385471+00:00",
+  "job_id": null,
+  "merkle_root": null,
+  "qom_compact_payload_bits": null,
+  "qom_compact_payload_hex": null,
+  "round_trip_seconds": null,
+  "shots": null,
+  "source": "aegis_adaptive_coherence_controller",
+  "source_file": "adaptive_coherence_controller.json"
+}

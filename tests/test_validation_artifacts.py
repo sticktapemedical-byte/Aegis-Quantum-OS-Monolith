@@ -64,4 +64,4 @@ def test_qom_schema_matches_sanitized_artifacts() -> None:
         if payload["qom_compact_payload_hex"]:
             assert payload["qom_compact_payload_bits"] == 176
             assert len(bytes.fromhex(payload["qom_compact_payload_hex"])) == 22
-        assert len(payload["merkle_root"]) == 64
+            assert len(payload["merkle_root"]) == 64

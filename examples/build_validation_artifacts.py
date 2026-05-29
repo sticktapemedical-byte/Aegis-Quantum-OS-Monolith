@@ -33,6 +33,18 @@ SOURCE_FILES = [
     "ibm_vqe_bridge_setpoint.json",
     "ibm_depth_stress_comparison.json",
     "ibm_session_batch_loop_fake_smoke.json",
+    "accepted_vs_rejected.json",
+    "delay_ramp.json",
+    "readout_mitigation_repeat.json",
+    "adaptive_probe_then_commit.json",
+    "adaptive_backend_selector.json",
+    "adaptive_layout_selector.json",
+    "adaptive_mitigation_selector.json",
+    "adaptive_coherence_controller.json",
+    "dynamical_decoupling_insertion.json",
+    "dynamic_circuit_governance.json",
+    "calibration_campaign.json",
+    "pulse_level_controls.json",
 ]
 
 
@@ -106,6 +118,31 @@ def sanitize_payload(source_name: str, payload: dict[str, Any]) -> dict[str, Any
             }
             for record in payload["records"]
         ]
+    if "arms" in payload:
+        sanitized["arms_summary"] = [
+            {
+                "arm": record.get("arm"),
+                "sequence": record.get("sequence"),
+                "status": record.get("status"),
+                "survival": record.get("survival"),
+                "selected": record.get("sequence") == payload.get("selected_sequence") or record.get("arm") == payload.get("selected_arm"),
+                "job_id": record.get("job_id"),
+            }
+            for record in payload["arms"]
+        ]
+    if "acceptance_summary" in payload:
+        sanitized["acceptance_summary"] = payload["acceptance_summary"]
+        sanitized["success_condition_met"] = payload.get("success_condition_met")
+    if "decision" in payload:
+        sanitized["decision"] = payload["decision"]
+    if "selected_backend" in payload:
+        sanitized["selected_backend"] = payload["selected_backend"]
+    if "selected_layout" in payload:
+        sanitized["selected_layout"] = payload["selected_layout"]
+    if "selected_sequence" in payload:
+        sanitized["selected_sequence"] = payload["selected_sequence"]
+    if "status" in payload:
+        sanitized["status"] = payload["status"]
     return sanitized
 
 

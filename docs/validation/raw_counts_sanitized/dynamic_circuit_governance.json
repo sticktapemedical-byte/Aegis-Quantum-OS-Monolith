@@ -1,0 +1,18 @@
+{
+  "artifact_sha256": "1507d7acefc05766b2b408efe47676cee4dadf6d2e2604cbacf57d37386a5aac",
+  "backend": "ibm_marrakesh",
+  "counts": {
+    "00": 118,
+    "11": 138
+  },
+  "created_utc": "2026-05-29T08:47:11.385471+00:00",
+  "job_id": "d8cl4lj8ch0s738v1ql0",
+  "merkle_root": null,
+  "qom_compact_payload_bits": null,
+  "qom_compact_payload_hex": null,
+  "round_trip_seconds": null,
+  "shots": 256,
+  "source": "aegis_dynamic_circuit_governance",
+  "source_file": "dynamic_circuit_governance.json",
+  "status": "real_job_complete"
+}

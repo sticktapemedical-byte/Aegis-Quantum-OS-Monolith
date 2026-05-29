@@ -1,6 +1,7 @@
 {
   "claim_boundary": "Prevents post-hoc threshold tuning; not a new hardware result.",
   "holdout_artifacts": [
+    "accepted_vs_rejected.json",
     "ibm_bridge_result.json",
     "ibm_depth_stress_comparison.json",
     "ibm_fast_coherence_marrakesh.json",
@@ -8,22 +9,32 @@
     "ibm_marrakesh_128_delay.json",
     "ibm_marrakesh_4096_ghz.json",
     "ibm_marrakesh_512.json",
-    "ibm_vqe_bridge_setpoint.json"
+    "ibm_vqe_bridge_setpoint.json",
+    "pulse_level_controls.json"
   ],
-  "holdout_count": 8,
+  "holdout_count": 10,
   "holdout_efficiency": {
-    "accepted_results": 8,
-    "jobs_per_accepted_result": 1.0,
-    "mean_accepted_quality": 0.476043701171875,
-    "rerun_count": 0,
-    "rerun_rate": 0.0,
-    "shots_per_accepted_result": 1408.0,
-    "total_jobs": 8,
-    "total_shots": 11264
+    "accepted_results": 9,
+    "jobs_per_accepted_result": 1.1111111111111112,
+    "mean_accepted_quality": 0.4231499565972222,
+    "rerun_count": 1,
+    "rerun_rate": 0.1,
+    "shots_per_accepted_result": 2104.8888888888887,
+    "total_jobs": 10,
+    "total_shots": 18944
   },
   "holdout_fraction": 0.3,
   "source": "aegis_blind_holdout_workflow",
   "train_artifacts": [
+    "adaptive_backend_selector.json",
+    "adaptive_coherence_controller.json",
+    "adaptive_layout_selector.json",
+    "adaptive_mitigation_selector.json",
+    "adaptive_probe_then_commit.json",
+    "calibration_campaign.json",
+    "delay_ramp.json",
+    "dynamic_circuit_governance.json",
+    "dynamical_decoupling_insertion.json",
     "ibm_fez_256.json",
     "ibm_kingston_256.json",
     "ibm_long_form_marrakesh.json",
@@ -31,17 +42,18 @@
     "ibm_long_form_marrakesh_setpoint_256.json",
     "ibm_readout_mitigation_comparison.json",
     "ibm_session_batch_loop_fake_smoke.json",
-    "ibm_vqe_bridge.json"
+    "ibm_vqe_bridge.json",
+    "readout_mitigation_repeat.json"
   ],
-  "train_count": 8,
+  "train_count": 18,
   "train_efficiency": {
-    "accepted_results": 7,
-    "jobs_per_accepted_result": 1.1428571428571428,
-    "mean_accepted_quality": 0.2685546875,
-    "rerun_count": 1,
-    "rerun_rate": 0.125,
-    "shots_per_accepted_result": 2102.8571428571427,
-    "total_jobs": 8,
-    "total_shots": 14720
+    "accepted_results": 9,
+    "jobs_per_accepted_result": 2.0,
+    "mean_accepted_quality": 0.20887586805555555,
+    "rerun_count": 9,
+    "rerun_rate": 0.5,
+    "shots_per_accepted_result": 5077.333333333333,
+    "total_jobs": 18,
+    "total_shots": 45696
   }
 }

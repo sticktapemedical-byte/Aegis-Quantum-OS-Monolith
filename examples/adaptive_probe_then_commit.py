@@ -16,14 +16,28 @@ from examples.ibm_bridge import run_fake_backend_once, run_real_hardware_once
 def probe_then_commit(real: bool, backends: list[str], probe_shots: int, commit_shots: int, channel: str) -> dict[str, object]:
     probes = []
     for index, backend in enumerate(backends):
-        record = (
-            run_real_hardware_once(shots=probe_shots, seed=2026 + index, channel=channel, backend_name=backend)
-            if real else run_fake_backend_once(shots=probe_shots, seed=2026 + index)
-        )
+        try:
+            record = (
+                run_real_hardware_once(shots=probe_shots, seed=2026 + index, channel=channel, backend_name=backend)
+                if real else run_fake_backend_once(shots=probe_shots, seed=2026 + index)
+            )
+        except Exception as exc:
+            record = {
+                "requested_backend": backend,
+                "backend": backend,
+                "probe_failed": True,
+                "error": str(exc),
+                "selector_score": float("-inf"),
+            }
+            probes.append(record)
+            continue
         record["requested_backend"] = backend
         record["selector_score"] = score_backend(record)
         probes.append(record)
-    selected = max(probes, key=lambda item: item["selector_score"])
+    successful_probes = [probe for probe in probes if not probe.get("probe_failed")]
+    if not successful_probes:
+        raise SystemExit("All probe backends failed; no committed workload submitted.")
+    selected = max(successful_probes, key=lambda item: item["selector_score"])
     selected_backend = str(selected["requested_backend"])
     committed = (
         run_real_hardware_once(shots=commit_shots, seed=2099, channel=channel, backend_name=selected_backend)

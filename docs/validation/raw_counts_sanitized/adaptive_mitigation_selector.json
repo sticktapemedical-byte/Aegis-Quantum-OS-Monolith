@@ -1,0 +1,21 @@
+{
+  "artifact_sha256": "263bbaa2507f443b15c6b1a7254acc5146916ad0d29c1c4d5470a0e605d7793d",
+  "backend": null,
+  "created_utc": "2026-05-29T08:47:11.385471+00:00",
+  "decision": {
+    "mitigated_quality": 0.9668303603601859,
+    "mitigation_overhead": 0.005,
+    "raw_quality": 0.951171875,
+    "selected_policy": "readout_mitigation",
+    "selection_reason": "uplift_exceeds_cost",
+    "uplift": 0.01565848536018588
+  },
+  "job_id": null,
+  "merkle_root": null,
+  "qom_compact_payload_bits": null,
+  "qom_compact_payload_hex": null,
+  "round_trip_seconds": null,
+  "shots": null,
+  "source": "aegis_adaptive_mitigation_selector",
+  "source_file": "adaptive_mitigation_selector.json"
+}

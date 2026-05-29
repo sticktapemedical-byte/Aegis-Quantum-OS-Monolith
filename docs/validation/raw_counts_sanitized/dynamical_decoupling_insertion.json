@@ -1,0 +1,48 @@
+{
+  "arms_summary": [
+    {
+      "arm": null,
+      "job_id": "d8cl43qjki0s73are790",
+      "selected": true,
+      "sequence": "none",
+      "status": "real_job_complete",
+      "survival": 0.3359375
+    },
+    {
+      "arm": null,
+      "job_id": "d8cl472jki0s73are7e0",
+      "selected": true,
+      "sequence": "xx",
+      "status": "real_job_complete",
+      "survival": 0.677734375
+    },
+    {
+      "arm": null,
+      "job_id": "d8cl4a47avuc73dr5mq0",
+      "selected": true,
+      "sequence": "xy4",
+      "status": "real_job_complete",
+      "survival": 0.701171875
+    },
+    {
+      "arm": null,
+      "job_id": "d8cl4d2jki0s73are7lg",
+      "selected": true,
+      "sequence": "cpmg",
+      "status": "real_job_complete",
+      "survival": 0.658203125
+    }
+  ],
+  "artifact_sha256": "0c6387d1407025dfcdb7ac0f47421ef3e12823c631c538e53fa820c7ef906d0e",
+  "backend": "ibm_marrakesh",
+  "created_utc": "2026-05-29T08:47:11.385471+00:00",
+  "job_id": null,
+  "merkle_root": null,
+  "qom_compact_payload_bits": null,
+  "qom_compact_payload_hex": null,
+  "round_trip_seconds": null,
+  "selected_sequence": "xy4",
+  "shots": null,
+  "source": "aegis_dynamical_decoupling_insertion",
+  "source_file": "dynamical_decoupling_insertion.json"
+}

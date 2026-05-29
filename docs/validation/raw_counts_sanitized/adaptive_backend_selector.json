@@ -1,0 +1,14 @@
+{
+  "artifact_sha256": "cbdb4ffa8b4ac4fca2dd628f9d2291c0bf6ff9d31eb77e31f7cf533fd7a249d9",
+  "backend": null,
+  "created_utc": "2026-05-29T08:47:11.385471+00:00",
+  "job_id": null,
+  "merkle_root": null,
+  "qom_compact_payload_bits": null,
+  "qom_compact_payload_hex": null,
+  "round_trip_seconds": null,
+  "selected_backend": "ibm_marrakesh",
+  "shots": null,
+  "source": "aegis_adaptive_backend_selector",
+  "source_file": "adaptive_backend_selector.json"
+}

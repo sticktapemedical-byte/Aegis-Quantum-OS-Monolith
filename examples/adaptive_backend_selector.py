@@ -33,14 +33,26 @@ def main() -> None:
     backends = [item.strip() for item in args.backends.split(",") if item.strip()]
     probes = []
     for index, backend in enumerate(backends):
-        if args.real:
-            probe = run_real_hardware_once(args.probe_shots, args.seed + index, args.channel, backend_name=backend)
-        else:
-            probe = run_fake_backend_once(args.probe_shots, args.seed + index)
-            probe["requested_backend"] = backend
-        probe["selector_score"] = score_backend(probe)
+        try:
+            if args.real:
+                probe = run_real_hardware_once(args.probe_shots, args.seed + index, args.channel, backend_name=backend)
+            else:
+                probe = run_fake_backend_once(args.probe_shots, args.seed + index)
+                probe["requested_backend"] = backend
+            probe["selector_score"] = score_backend(probe)
+        except Exception as exc:
+            probe = {
+                "requested_backend": backend,
+                "backend": backend,
+                "probe_failed": True,
+                "error": str(exc),
+                "selector_score": float("-inf"),
+            }
         probes.append(probe)
-    selected = max(probes, key=lambda item: item["selector_score"])
+    successful_probes = [probe for probe in probes if not probe.get("probe_failed")]
+    if not successful_probes:
+        raise SystemExit("All probe backends failed; no committed workload submitted.")
+    selected = max(successful_probes, key=lambda item: item["selector_score"])
     selected_backend = selected.get("backend") if args.real else selected.get("requested_backend", selected.get("backend"))
     if args.real:
         committed = run_real_hardware_once(args.commit_shots, args.seed + 99, args.channel, backend_name=selected_backend)
